@@ -66,8 +66,7 @@ alias vim='nvim'
 alias vi='nvim'
 alias v='nvim'
 alias cl='clear'
-alias update='yay -Syyu'
-alias remove_orphans='sudo pacman -Rs $(pacman -Qqtd)'
+alias update='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt clean && sudo apt autoclean && sudo apt autoremove'
 alias clear_logs='sudo rm -rf /var/log/journal/*'
 alias desk='cd /home/zlatomir/Desktop/'
 alias doc='cd /home/zlatomir/Documents/'
@@ -76,8 +75,6 @@ alias proj='cd /home/zlatomir/Projects/'
 alias wtr='curl wttr.in/sofia'
 alias vc='nvim ~/.config/nvim/init.vim'
 alias temp='sensors | grep Core'
-alias neo='neofetch'
-alias pf='pfetch'
 alias sf='screenfetch'
 alias reboot='sudo shutdown -r now'
 alias swap_alt_win='setxkbmap -option;setxkbmap -option altwin:swap_alt_win'
@@ -91,9 +88,3 @@ bind "set show-all-if-ambiguous on"
 
 alias show_zombies="ps aux | grep -E \"Z|defunct\""
 alias show_parent_process="ps -o ppid= -p "
-
-pfetch
-
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-    startx
-fi
