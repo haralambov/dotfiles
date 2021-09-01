@@ -34,6 +34,10 @@ let g:NERDTreeGitStatusUntrackedFilesMode = 'all' " a heavy feature too. default
 let g:NERDTreeGitStatusConcealBrackets = 1 " default: 0
 let NERDTreeMinimalUI=1
 
+" Start NERDTree. If a file is specified, move the cursor to its window.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+
 " sync open file with NERDTree
 " Check if NERDTree is open or active
 function! IsNERDTreeOpen()
@@ -43,10 +47,11 @@ endfunction
 " Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
 " file, and we're not in vimdiff
 function! SyncTree()
-    if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff && s:is_coc_action == 0
         NERDTreeFind
         wincmd p
     endif
+    let s:is_coc_action=0
 endfunction
 
 " Highlight currently open buffer in NERDTree
@@ -84,12 +89,22 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
+let s:is_coc_action=0
+
+" Sets a custom flag, later on used by the SyncTree
+" so that wincmd doesn't mess up the whole screen
+" when entering a new buffer due to CoC actions
+function! CoCAction(actionName, ...)
+    let s:is_coc_action=1
+    call CocActionAsync(a:actionName, a:000)
+endfunction
+
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> ga <Plug>(coc-codeaction-line)
+nmap <silent> gd :call CoCAction("jumpDefinition")<CR>
+nmap <silent> gy :call CoCAction("jumpTypeDefinition")<CR>
+nmap <silent> gi :call CoCAction("jumpImplementation")<CR>
+nmap <silent> gr :call CoCAction("jumpReferences")<CR>
+nmap <silent> ga :call CoCAction("codeAction", "line")<CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -114,6 +129,12 @@ nnoremap <leader>f :call CocAction('format')<CR>
 
 let g:coc_snippet_next = '<tab>'
 
+" coc plugins config
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-phpls',
+  \ ]
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
