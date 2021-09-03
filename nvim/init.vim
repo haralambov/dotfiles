@@ -32,6 +32,7 @@ nnoremap <leader>q :qa<CR>
 let g:NERDTreeGitStatusShowClean = 1 " default: 0
 let g:NERDTreeGitStatusUntrackedFilesMode = 'all' " a heavy feature too. default: normal
 let g:NERDTreeGitStatusConcealBrackets = 1 " default: 0
+let g:NERDTreeWinSize=40
 let NERDTreeMinimalUI=1
 
 " Start NERDTree. If a file is specified, move the cursor to its window.
@@ -94,9 +95,9 @@ let s:is_coc_action=0
 " Sets a custom flag, later on used by the SyncTree
 " so that wincmd doesn't mess up the whole screen
 " when entering a new buffer due to CoC actions
-function! CoCAction(actionName, ...)
+function! CoCAction(actionName)
     let s:is_coc_action=1
-    call CocActionAsync(a:actionName, a:000)
+    call CocActionAsync(a:actionName)
 endfunction
 
 " GoTo code navigation.
@@ -104,7 +105,6 @@ nmap <silent> gd :call CoCAction("jumpDefinition")<CR>
 nmap <silent> gy :call CoCAction("jumpTypeDefinition")<CR>
 nmap <silent> gi :call CoCAction("jumpImplementation")<CR>
 nmap <silent> gr :call CoCAction("jumpReferences")<CR>
-nmap <silent> ga :call CoCAction("codeAction", "line")<CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
