@@ -230,6 +230,9 @@ nnoremap <A-h>    :vertical resize +2<CR>
 nnoremap <C-e>    3<C-e>
 nnoremap <C-y>    3<C-y>
 
+" backspace - cycle between current and most recent file
+nnoremap <BS> <C-^>
+
 nnoremap <leader>h :noh<CR>
 
 " Better tabbing
