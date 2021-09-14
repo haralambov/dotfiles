@@ -88,3 +88,8 @@ bind "set show-all-if-ambiguous on"
 
 alias show_zombies="ps aux | grep -E \"Z|defunct\""
 alias show_parent_process="ps -o ppid= -p "
+
+# automatically start X if tty1
+if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
+    startx
+fi
