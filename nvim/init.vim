@@ -181,6 +181,7 @@ EOF
 " open a terminal in a new tab
 nnoremap <leader>t :tabnew<CR>:terminal<CR>a
 tnoremap <Esc> <C-\><C-n>
+tnoremap jj <C-\><C-n>
 
 " save all files
 nnoremap <leader>s :wa<CR>
