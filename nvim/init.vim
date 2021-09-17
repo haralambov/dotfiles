@@ -27,7 +27,8 @@ call plug#end()
 
 let mapleader=" "
 inoremap jj <Esc>
-nnoremap <leader>q :qa<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>Q :qa<CR>
 
 let g:NERDTreeGitStatusShowClean = 1 " default: 0
 let g:NERDTreeGitStatusUntrackedFilesMode = 'all' " a heavy feature too. default: normal
