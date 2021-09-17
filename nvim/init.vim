@@ -180,7 +180,8 @@ require'lualine'.setup {
 EOF
 
 " open a terminal in a new tab
-nnoremap <leader>t :tabnew<CR>:terminal<CR>a
+nnoremap <leader>T :tabnew<CR>:terminal<CR>a
+nnoremap <leader>t :15sp<CR>:terminal<CR>a
 tnoremap <Esc> <C-\><C-n>
 tnoremap jj <C-\><C-n>
 
