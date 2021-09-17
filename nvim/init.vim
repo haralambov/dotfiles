@@ -230,6 +230,12 @@ nnoremap <A-k>    :resize +2<CR>
 nnoremap <A-l>    :vertical resize -2<CR>
 nnoremap <A-h>    :vertical resize +2<CR>
 
+" Use Ctrl + H/J/K/L to change windows
+nnoremap <C-h>    <C-w><C-h>
+nnoremap <C-j>    <C-w><C-j>
+nnoremap <C-k>    <C-w><C-k>
+nnoremap <C-l>    <C-w><C-l>
+
 nnoremap <C-e>    3<C-e>
 nnoremap <C-y>    3<C-y>
 
