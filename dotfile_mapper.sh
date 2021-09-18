@@ -15,3 +15,10 @@ if [ -f "$HOME/.bashrc" ]; then
 fi
 
 ln -s "$PWD/.bashrc" "$HOME/.bashrc"
+
+# map compton config
+if [ -f "$HOME/.config/compton.conf" ]; then
+    rm "$HOME/.config/compton.conf"
+fi
+
+ln -s "$PWD/compton.conf" "$HOME/.config/compton.conf"
