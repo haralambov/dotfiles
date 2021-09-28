@@ -223,6 +223,7 @@ set splitbelow
 set splitright
 set clipboard=unnamedplus
 set signcolumn=yes
+set spell
 
 " Use alt + hjkl to resize windows
 nnoremap <A-j>    :resize -2<CR>
