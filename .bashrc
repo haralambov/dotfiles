@@ -82,6 +82,7 @@ alias swap_win_alt='setxkbmap -option;setxkbmap -option altwin:swap_win_alt'
 alias swapcaps='setxkbmap -option caps:swapescape'
 alias copy='xclip -selection clipboard -i '
 alias copy_image='xclip -selection clipboard -t image/png -i '
+alias notes='cd ~/Documents/notes && vim'
 
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
