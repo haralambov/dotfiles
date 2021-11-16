@@ -22,3 +22,9 @@ if [ -f "$HOME/.config/compton.conf" ]; then
 fi
 
 ln -s "$PWD/compton.conf" "$HOME/.config/compton.conf"
+
+if [ -f "/usr/local/bin/locker" ]; then
+    sudo rm "/usr/local/bin/locker"
+fi
+
+sudo ln -s "$PWD/scripts/locker" "/usr/local/bin/locker"
