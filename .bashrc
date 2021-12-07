@@ -83,6 +83,9 @@ alias swapcaps='setxkbmap -option caps:swapescape'
 alias copy='xclip -selection clipboard -i '
 alias copy_image='xclip -selection clipboard -t image/png -i '
 alias notes='cd ~/Documents/notes && vim'
+alias todos='cd ~/Documents/notes && vim todos'
+alias spotify='(spotify --no-zygote &) && exit'
+alias slp='sudo systemctl suspend'
 
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
