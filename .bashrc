@@ -13,6 +13,12 @@ NC="\[\e[m\]"               # Color Reset
 
 PROMPT_COMMAND=promptCommand
 
+export GOPATH=~/Projects/go
+export GOROOT=/usr/local/bin/go
+export GO111MODULE="off"
+
+export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
+
 function promptCommand() {
     local EXIT="$?"
     PS1=""
