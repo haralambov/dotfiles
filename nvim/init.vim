@@ -112,6 +112,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>a  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
+" Ctrl + P to show signature help
+inoremap <C-P> <C-\><C-O>:call CocActionAsync('showSignatureHelp')<cr>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
