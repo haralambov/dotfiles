@@ -105,6 +105,9 @@ nmap <silent> gy :call CoCAction("jumpTypeDefinition")<CR>
 nmap <silent> gi :call CoCAction("jumpImplementation")<CR>
 nmap <silent> gr :call CoCAction("jumpReferences")<CR>
 
+" Highlights the current cursor word after updatetime period
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
