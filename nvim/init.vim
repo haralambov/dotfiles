@@ -108,6 +108,9 @@ nmap <silent> gr :call CoCAction("jumpReferences")<CR>
 " Highlights the current cursor word after updatetime period
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>a  <Plug>(coc-codeaction)
+
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
