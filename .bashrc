@@ -19,7 +19,7 @@ export GO111MODULE="off"
 
 export CM_MAX_CLIPS=30
 export CM_SELECTIONS="clipboard"
-export CM_DIR=/home/zlatomir/.cache/clipmenu
+export CM_DIR=~/.cache/clipmenu
 
 export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 
