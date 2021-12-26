@@ -28,3 +28,10 @@ if [ -f "/usr/local/bin/locker" ]; then
 fi
 
 sudo ln -s "$PWD/scripts/locker" "/usr/local/bin/locker"
+
+if [ -f "/usr/local/bin/passmenu" ]; then
+    sudo rm "/usr/local/bin/passmenu"
+fi
+
+sudo ln -s "$PWD/scripts/passmenu" "/usr/local/bin/passmenu"
+
