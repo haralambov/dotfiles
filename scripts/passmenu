@@ -8,6 +8,12 @@ if [[ $1 == "--type" ]]; then
 	shift
 fi
 
+otp=""
+if [[ $1 == "--otp" ]]; then
+    otp="otp"
+    shift
+fi
+
 prefix=${PASSWORD_STORE_DIR-~/.password-store}
 password_files=( "$prefix"/**/*.gpg )
 password_files=( "${password_files[@]#"$prefix"/}" )
@@ -20,8 +26,8 @@ password=$(printf '%s\n' "${password_files[@]}" | dmenu -h 29 -c -i -l 10 -bw 3 
 gpg_cache=$(gpg-connect-agent 'keyinfo --list' /bye 2>/dev/null | awk 'BEGIN{CACHED=0} /^S/ {if($7==1){CACHED=1}}   END{if($0!=""){print CACHED} else {print "none"}}')
 
 if [[ $gpg_cache == 1 ]]; then
-    pass show -c "$password" 2 >/dev/null
+    pass $otp show -c "$password" > /dev/null
 else
-    st -e pass show -c "$password" 2 >/dev/null
+    st -e pass $otp show -c "$password" > /dev/null
 fi
 
