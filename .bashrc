@@ -42,6 +42,10 @@ function promptCommand() {
     PS1+='$ '
 }
 
+function mfa() {
+    CODE=$(oathtool -b --totp $1)
+    echo $CODE | tee /dev/tty | xclip -sel clip
+}
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
