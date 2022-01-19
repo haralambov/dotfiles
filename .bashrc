@@ -47,6 +47,36 @@ function mfa() {
     echo $CODE | tee /dev/tty | xclip -sel clip
 }
 
+PI_USER="pi"
+PI_IP="192.168.1.12"
+PI_BACKUP_PATH="/home/pi/usb/backup"
+
+alias pi="ssh $PI_USER@$PI_IP"
+
+function backup() {
+    ssh "$PI_USER"@"$PI_IP" rm -rf "$PI_BACKUP_PATH; mkdir $PI_BACKUP_PATH"
+    scp -r \
+        ~/intelephense/licence.txt \
+        ~/Documents \
+        ~/.ssh \
+        ~/.gnupg \
+        ~/.password-store \
+    "$PI_USER"@"$PI_IP":"$PI_BACKUP_PATH"
+}
+
+function restore() {
+    if [ ! -d ~/.backup ]; then
+        mkdir ~/.backup
+    fi
+    rm -rf ~/.backup/*
+    scp -rp "$PI_USER"@"$PI_IP":"$PI_BACKUP_PATH" ~/.backup
+    cp -r ~/.backup/backup/licence.txt ~/intelephense/
+    cp -r ~/.backup/backup/Documents ~/
+    cp -r ~/.backup/backup/.ssh ~/
+    cp -r ~/.backup/backup/.gnupg ~/
+    cp -r ~/.backup/backup/.password-store ~/
+}
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
