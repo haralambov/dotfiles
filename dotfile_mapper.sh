@@ -21,7 +21,14 @@ if [ -f "$HOME/.config/compton.conf" ]; then
     rm "$HOME/.config/compton.conf"
 fi
 
-ln -s "$PWD/compton.conf" "$HOME/.config/compton.conf"
+ln -s "$PWD/config/compton.conf" "$HOME/.config/compton.conf"
+
+# maps touchpad config, that enables tap to click
+if [ -f "/etc/X11/xorg.conf.d/40-libinput.conf" ]; then
+    sudo rm "/etc/X11/xorg.conf.d/40-libinput.conf"
+fi
+
+sudo ln -s "$PWD/config/40-libinput.conf" "/etc/X11/xorg.conf.d/40-libinput.conf"
 
 if [ -f "/usr/local/bin/locker" ]; then
     sudo rm "/usr/local/bin/locker"
