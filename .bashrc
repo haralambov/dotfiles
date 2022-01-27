@@ -77,6 +77,33 @@ function restore() {
     cp -r ~/.backup/backup/.password-store ~/
 }
 
+function wifi_status() {
+    STATUS=$(nmcli radio wifi)
+    echo "Wi-Fi status: $STATUS"
+}
+
+function wifi_enable() {
+    nmcli radio wifi on
+    wifi_status
+}
+
+function wifi_disable() {
+    nmcli radio wifi off
+    wifi_status
+}
+
+function wifi_list() {
+    nmcli dev wifi list
+}
+
+function wifi_connect() {
+    sudo nmcli --ask dev wifi connect $1
+}
+
+function wifi_disconnect() {
+    nmcli con down $1
+}
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
