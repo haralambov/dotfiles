@@ -4,7 +4,6 @@ CURRENT_LANGUAGE=$(setxkbmap -query | grep -i layout | awk '{print $2}' | cut -d
 if [[ $CURRENT_LANGUAGE != "us" ]]
 then
     setxkbmap -layout us,bg -variant ,phonetic;
-    kill -44 $(pidof dwmblocks);
 fi
 
 slock
