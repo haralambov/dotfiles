@@ -20,6 +20,8 @@ Plug 'gruvbox-community/gruvbox'
 
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 
+Plug 'tpope/vim-surround'
+
 Plug 'hoob3rt/lualine.nvim'
 Plug 'romainl/vim-cool'
 
