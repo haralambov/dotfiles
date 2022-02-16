@@ -143,7 +143,8 @@ let g:coc_snippet_next = '<tab>'
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-pairs',
-  \ 'coc-phpls',
+  \ 'coc-rls',
+  \ 'coc-rust-analyzer'
   \ ]
 
 " Find files using Telescope command-line sugar.
