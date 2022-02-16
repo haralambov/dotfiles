@@ -62,9 +62,6 @@ endfunction
 
 " Highlight currently open buffer in NERDTree
 autocmd BufEnter * call SyncTree()
-" Automatically format .go files when saving
-autocmd BufWritePre *.go :call CocAction('format')
-
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
