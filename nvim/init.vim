@@ -133,9 +133,9 @@ endfunction
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-nnoremap <leader>f :call CocAction('format')<CR>
+xmap <leader>fm  <Plug>(coc-format-selected)
+nmap <leader>fm  <Plug>(coc-format-selected)
+nnoremap <leader>fm :call CocAction('format')<CR>
 
 let g:coc_snippet_next = '<tab>'
 
