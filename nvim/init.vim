@@ -144,7 +144,6 @@ let g:coc_snippet_next = '<tab>'
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-pairs',
-  \ 'coc-rls',
   \ 'coc-rust-analyzer'
   \ ]
 
