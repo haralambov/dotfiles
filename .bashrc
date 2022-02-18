@@ -52,7 +52,6 @@ alias pi="ssh $PI_USER@$PI_IP"
 function backup() {
     ssh "$PI_USER"@"$PI_IP" rm -rf "$PI_BACKUP_PATH; mkdir $PI_BACKUP_PATH"
     scp -r \
-        ~/intelephense/licence.txt \
         ~/Documents \
         ~/.ssh \
         ~/.gnupg \
@@ -66,7 +65,6 @@ function restore() {
     fi
     rm -rf ~/.backup/*
     scp -rp "$PI_USER"@"$PI_IP":"$PI_BACKUP_PATH" ~/.backup
-    cp -r ~/.backup/backup/licence.txt ~/intelephense/
     cp -r ~/.backup/backup/Documents ~/
     cp -r ~/.backup/backup/.ssh ~/
     cp -r ~/.backup/backup/.gnupg ~/
