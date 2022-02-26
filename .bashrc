@@ -44,7 +44,7 @@ function mfa() {
 }
 
 PI_USER="pi"
-PI_IP="192.168.1.12"
+PI_IP="192.168.1.2"
 PI_BACKUP_PATH="/home/pi/usb/backup"
 
 alias pi="ssh $PI_USER@$PI_IP"
