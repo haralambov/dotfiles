@@ -148,6 +148,7 @@ let g:coc_global_extensions = [
   \ 'coc-phpls',
   \ 'coc-tsserver',
   \ 'coc-eslint',
+  \ 'coc-blade',
   \ ]
 
 " Find files using Telescope command-line sugar.
