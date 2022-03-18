@@ -158,6 +158,8 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 let NERDTreeShowHidden=1
+" Refresh NERDTree and jump back
+nmap <Leader>rf :NERDTreeFocus<cr>R<c-w><c-p>
 nnoremap <C-n> :NERDTreeToggle<CR><C-w>l
 vmap <C-_> <Plug>NERDCommenterToggle
 " comment and go to the next line (mind the J at the end)
