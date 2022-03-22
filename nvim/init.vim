@@ -149,6 +149,11 @@ let g:coc_global_extensions = [
   \ 'coc-tsserver',
   \ 'coc-eslint',
   \ 'coc-blade',
+  \ 'coc-tailwindcss',
+  \ 'coc-html',
+  \ 'coc-htmlhint',
+  \ 'coc-html-css-support',
+  \ 'coc-emmet',
   \ ]
 
 " Find files using Telescope command-line sugar.
