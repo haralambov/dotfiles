@@ -17,6 +17,8 @@ export CM_MAX_CLIPS=30
 export CM_SELECTIONS="clipboard"
 export CM_DIR=~/.cache/clipmenu
 
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+
 export PATH="$PATH:~/.local/bin"
 
 function promptCommand() {
@@ -149,7 +151,7 @@ alias copy='xclip -selection clipboard -i '
 alias copy_image='xclip -selection clipboard -t image/png -i '
 alias notes='cd ~/Documents/notes && vim'
 alias todos='cd ~/Documents/notes && vim todos'
-alias spotify='(spotify --no-zygote &) && exit'
+alias restart_spotifyd='systemctl --user restart spotifyd.service'
 alias slp='sudo systemctl suspend'
 
 bind "set completion-ignore-case on"
