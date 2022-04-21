@@ -166,5 +166,3 @@ alias show_parent_process="ps -o ppid= -p "
 if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
     startx
 fi
-
-. "$HOME/.cargo/env"
