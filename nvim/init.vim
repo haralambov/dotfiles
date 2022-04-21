@@ -210,8 +210,8 @@ tnoremap jj <C-\><C-n>
 nnoremap <leader>s :wa<CR>
 
 colorscheme gruvbox
-set background=dark
-let g:gruvbox_contrast_light='hard'
+set background=light
+let g:gruvbox_contrast_light='soft'
 
 set number
 set relativenumber
