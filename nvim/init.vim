@@ -17,6 +17,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'gruvbox-community/gruvbox'
+Plug 'altercation/vim-colors-solarized'
 
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 
@@ -209,7 +210,7 @@ tnoremap jj <C-\><C-n>
 " save all files
 nnoremap <leader>s :wa<CR>
 
-colorscheme gruvbox
+colorscheme solarized
 set background=light
 let g:gruvbox_contrast_light='soft'
 
