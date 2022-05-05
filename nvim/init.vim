@@ -219,7 +219,7 @@ set relativenumber
 
 set cursorline
 set colorcolumn=80
-highlight ColorColumn ctermbg=238
+highlight ColorColumn ctermbg=248
 
 set tabstop=4 softtabstop=4
 set shiftwidth=4
