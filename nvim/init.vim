@@ -207,6 +207,10 @@ tnoremap jj <C-\><C-n>
 " save all files
 nnoremap <leader>s :wa<CR>
 
+" easier splits: | splits right, - splits below
+nnoremap <bar> :vsp %<CR>
+nnoremap - :sp %<CR>
+
 colorscheme gruvbox
 set background=dark
 
