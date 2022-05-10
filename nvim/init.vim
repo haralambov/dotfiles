@@ -246,6 +246,7 @@ set splitright
 set clipboard=unnamedplus
 set signcolumn=yes
 set spell
+set laststatus=3
 
 " Use alt + hjkl to resize windows
 nnoremap <A-j>    :resize -2<CR>
