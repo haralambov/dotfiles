@@ -18,8 +18,6 @@ Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'gruvbox-community/gruvbox'
 
-Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
-
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 
