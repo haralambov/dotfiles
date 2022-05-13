@@ -100,6 +100,24 @@ function wifi_disconnect() {
     nmcli con down $1
 }
 
+function to_upper() {
+    echo $1 | tr a-z A-Z
+}
+
+function stock() {
+    SYMBOL=$(to_upper $1)
+    curl https://terminal-stocks.herokuapp.com/$SYMBOL
+}
+
+function stock_historical() {
+    SYMBOL=$(to_upper $1)
+    if [ "$2" ]; then
+        curl https://terminal-stocks.herokuapp.com/historical/$SYMBOL?page=$2
+    else
+        curl https://terminal-stocks.herokuapp.com/historical/$SYMBOL
+    fi
+}
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
