@@ -181,6 +181,9 @@ alias show_parent_process="ps -o ppid= -p "
 
 # set -o vi # enables vim mode
 
+# Allows you to cd into directory merely by typing the directory name
+shopt -s autocd
+
 # automatically start X if tty1
 if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
     startx
