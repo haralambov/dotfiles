@@ -35,9 +35,9 @@ function promptCommand() {
     PS1+="${BCyan}(\t)${NC}${BRed}[${NC}${BYellow}\u${NC}${Green}@${NC}${BBlue}\h${NC}${BRed}]${NC} ${BPurple}\W${NC} "
     local BRANCH="$(git branch 2> /dev/null | grep -e ^* | cut -d\  -f2)"
     if [ -n "$BRANCH" ]; then
-        PS1+="($BRANCH)"
+        PS1+="($BRANCH) "
     fi
-    PS1+='$ '
+    PS1+='❱❱❱ '
 }
 
 function mfa() {
