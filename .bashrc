@@ -173,6 +173,7 @@ alias todos='cd ~/Documents/notes && vim todos'
 alias restart_spotifyd='systemctl --user restart spotifyd.service'
 alias slp='sudo systemctl suspend'
 alias less='less -S'
+alias remove_orphans='pacman -Qtdq | sudo pacman -Rns -'
 
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
