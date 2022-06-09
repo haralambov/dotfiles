@@ -277,3 +277,6 @@ set noshowcmd  " to get rid of display of last command
 set shortmess+=F  " to get rid of the file name displayed in the command line bar
 
 au! BufWritePost $MYVIMRC source % " automatically loads the config on write
+
+" Abbreviations
+ab todo //TODO:
