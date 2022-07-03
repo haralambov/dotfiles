@@ -243,7 +243,7 @@ set scrolloff=5
 set list
 set splitbelow
 set splitright
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 set signcolumn=yes
 set spell
 set laststatus=3
