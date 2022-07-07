@@ -161,7 +161,6 @@ alias wtr='curl wttr.in/sofia'
 alias vc='nvim ~/.config/nvim/init.vim'
 alias temp='sensors | grep Core'
 alias sf='screenfetch -N'
-alias neo='neofetch'
 alias reboot='sudo shutdown -r now'
 alias swap_alt_win='setxkbmap -option;setxkbmap -option "altwin:swap_alt_win,caps:swapescape"'
 alias swap_win_alt='setxkbmap -option;setxkbmap -option "altwin:swap_win_alt,caps:swapescape"'
@@ -170,10 +169,8 @@ alias copy='xclip -selection clipboard -i '
 alias copy_image='xclip -selection clipboard -t image/png -i '
 alias notes='cd ~/Documents/notes && vim'
 alias todos='cd ~/Documents/notes && vim todos'
-alias restart_spotifyd='systemctl --user restart spotifyd.service'
 alias slp='sudo systemctl suspend'
 alias less='less -S'
-alias remove_orphans='pacman -Qtdq | sudo pacman -Rns -'
 
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
