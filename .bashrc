@@ -152,6 +152,7 @@ alias vi='nvim'
 alias v='nvim'
 alias cl='clear'
 alias update='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt clean && sudo apt autoclean && sudo apt autoremove && sudo snap refresh'
+alias remove_residual_packages="sudo apt-get remove --purge $(dpkg -l | grep \"^rc\" | awk '{print $2}')"
 alias clear_logs='sudo rm -rf /var/log/journal/*'
 alias desk='cd ~/Desktop/'
 alias doc='cd ~/Documents/'
