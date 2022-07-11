@@ -267,6 +267,8 @@ nnoremap <C-y>    3<C-y>
 nnoremap <BS> <C-^>
 
 nnoremap <leader>h :noh<CR>
+" reselect pasted text
+nnoremap gp `[v`]
 
 " Better tabbing
 vnoremap < <gv
