@@ -172,6 +172,7 @@ alias notes='cd ~/Documents/notes && vim'
 alias todos='cd ~/Documents/notes && vim todos'
 alias slp='sudo systemctl suspend'
 alias less='less -S'
+alias up='uptime -p'
 
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
