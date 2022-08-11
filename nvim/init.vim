@@ -225,6 +225,7 @@ nnoremap <bar> :vsp %<CR>
 nnoremap - :sp %<CR>
 
 colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
 set background=dark
 
 set number
