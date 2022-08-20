@@ -4,10 +4,12 @@
 if [ ! -d "$HOME/.config/nvim" ]; then
     mkdir "$HOME/.config/nvim"
 else
-    rm "$HOME/.config/nvim/init.vim"
+    rm "$HOME/.config/nvim/init.lua"
+    rm "$HOME/.config/nvim/lua"
 fi
 
-ln -s "$PWD/nvim/init.vim" "$HOME/.config/nvim/init.vim"
+ln -s "$PWD/nvim/init.lua" "$HOME/.config/nvim/init.lua"
+ln -s "$PWD/nvim/lua" "$HOME/.config/nvim/lua"
 
 # map bashrc config
 if [ -f "$HOME/.bashrc" ]; then
