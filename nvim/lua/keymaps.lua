@@ -49,3 +49,6 @@ vim.api.nvim_set_keymap('n', '-', ':sp %<CR>', { noremap = true })
 
 -- Leader + s to save all files
 vim.api.nvim_set_keymap('n', '<LEADER>s', ':wa<CR>', { noremap = true })
+
+-- Close quickfix list window
+vim.api.nvim_set_keymap('n', '<LEADER>cc', ':cclose<CR>', { noremap = true })
