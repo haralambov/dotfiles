@@ -52,3 +52,9 @@ vim.api.nvim_set_keymap('n', '<LEADER>s', ':wa<CR>', { noremap = true })
 
 -- Close quickfix list window
 vim.api.nvim_set_keymap('n', '<LEADER>cc', ':cclose<CR>', { noremap = true })
+
+-- Make the current window the only one on the screen
+vim.api.nvim_set_keymap('n', '<LEADER>o', ':on<CR>', { noremap = true })
+
+-- Close all other tab pages
+vim.api.nvim_set_keymap('n', '<LEADER>O', ':on<CR>', { noremap = true })
