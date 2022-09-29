@@ -58,3 +58,7 @@ vim.api.nvim_set_keymap('n', '<LEADER>o', ':on<CR>', { noremap = true })
 
 -- Close all other tab pages
 vim.api.nvim_set_keymap('n', '<LEADER>O', ':on<CR>', { noremap = true })
+
+-- Go down/up by half a page and center the cursor
+vim.api.nvim_set_keymap('n', '<C-d>', '<C-d>zz', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>zz', { noremap = true })
