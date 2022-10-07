@@ -23,7 +23,7 @@ Plug 'windwp/nvim-autopairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'romainl/vim-cool'
 Plug 'tpope/vim-surround'
--- Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 vim.call('plug#end')
 
