@@ -24,6 +24,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'romainl/vim-cool'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'ggandor/leap.nvim'
 
 vim.call('plug#end')
 
@@ -36,3 +37,4 @@ require('plugins_configs/cmp')
 require('plugins_configs/comment')
 require('plugins_configs/autopairs')
 require('plugins_configs/gitgutter')
+require('plugins_configs/leap')
