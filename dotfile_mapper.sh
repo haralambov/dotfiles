@@ -11,6 +11,15 @@ fi
 ln -s "$PWD/nvim/init.lua" "$HOME/.config/nvim/init.lua"
 ln -s "$PWD/nvim/lua" "$HOME/.config/nvim/lua"
 
+# map i3 config
+if [ ! -d "$HOME/.config/i3" ]; then
+    mkdir "$HOME/.config/i3"
+else
+    rm "$HOME/.config/i3/config"
+fi
+
+ln -s "$PWD/i3/config" "$HOME/.config/i3/config"
+
 # map bashrc config
 if [ -f "$HOME/.bashrc" ]; then
     rm "$HOME/.bashrc"
