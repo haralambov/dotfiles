@@ -18,7 +18,7 @@ else
     rm "$HOME/.config/i3/config"
 fi
 
-ln -s "$PWD/i3/config" "$HOME/.config/i3/config"
+ln -s "$PWD/config/i3/config" "$HOME/.config/i3/config"
 
 # map bashrc config
 if [ -f "$HOME/.bashrc" ]; then
