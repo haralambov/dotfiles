@@ -27,3 +27,4 @@ vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.colorcolumn = "80"
 vim.opt.showmode = false
+vim.opt.lazyredraw = true
