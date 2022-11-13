@@ -29,7 +29,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<LEADER>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<LEADER>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<LEADER>fm', vim.lsp.buf.formatting, bufopts)
+  vim.keymap.set('n', '<LEADER>fm', vim.lsp.buf.format, bufopts)
 end
 
 require'lspconfig'.rust_analyzer.setup({on_attach=on_attach})
