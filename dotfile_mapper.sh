@@ -20,6 +20,15 @@ fi
 
 ln -s "$PWD/config/i3/config" "$HOME/.config/i3/config"
 
+# map i3blocks config
+if [ ! -d "$HOME/.config/i3blocks" ]; then
+    mkdir "$HOME/.config/i3blocks"
+else
+    rm "$HOME/.config/i3blocks/config"
+fi
+
+ln -s "$PWD/config/i3blocks/config" "$HOME/.config/i3blocks/config"
+
 # map bashrc config
 if [ -f "$HOME/.bashrc" ]; then
     rm "$HOME/.bashrc"
