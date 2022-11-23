@@ -117,6 +117,14 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+for_window [instance="scratchpad"] floating enable
+for_window [instance="scratchpad"] resize set 800 600
+for_window [instance="scratchpad"] move scratchpad
+for_window [instance="scratchpad"] border pixel 5
+exec --no-startup-id sakura --name=scratchpad
+
+bindsym $mod+Shift+Return [instance="scratchpad"] scratchpad show; [instance="scratchpad"] move position center
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
