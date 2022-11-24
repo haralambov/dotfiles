@@ -125,6 +125,10 @@ exec --no-startup-id sakura --name=scratchpad
 
 bindsym $mod+Shift+Return [instance="scratchpad"] scratchpad show; [instance="scratchpad"] move position center
 
+bindsym $mod+b exec firefox
+bindsym $mod+Shift+f exec thunar
+bindsym $mod+Shift+v exec diodon
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
