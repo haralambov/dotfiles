@@ -129,6 +129,9 @@ bindsym $mod+b exec firefox
 bindsym $mod+Shift+f exec thunar
 bindsym $mod+Shift+v exec diodon
 
+set $lock_command i3lock -i ~/Projects/dotfiles/lock_screen.png -f
+bindsym $mod+x exec $lock_command
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
