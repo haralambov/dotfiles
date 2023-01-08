@@ -13,12 +13,6 @@ NC="\[\e[m\]"               # Color Reset
 
 PROMPT_COMMAND=promptCommand
 
-export CM_MAX_CLIPS=30
-export CM_SELECTIONS="clipboard"
-export CM_DIR=~/.cache/clipmenu
-
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-
 export PATH="$PATH:~/.local/bin"
 
 function promptCommand() {
@@ -43,34 +37,6 @@ function promptCommand() {
 function mfa() {
     CODE=$(oathtool -b --totp $1)
     echo $CODE | tee /dev/tty | xclip -sel clip
-}
-
-PI_USER="pi"
-PI_IP="192.168.1.2"
-PI_BACKUP_PATH="/home/pi/usb/backup"
-
-alias pi="ssh $PI_USER@$PI_IP"
-
-function backup() {
-    ssh "$PI_USER"@"$PI_IP" rm -rf "$PI_BACKUP_PATH; mkdir $PI_BACKUP_PATH"
-    scp -r \
-        ~/Documents \
-        ~/.ssh \
-        ~/.gnupg \
-        ~/.password-store \
-    "$PI_USER"@"$PI_IP":"$PI_BACKUP_PATH"
-}
-
-function restore() {
-    if [ ! -d ~/.backup ]; then
-        mkdir ~/.backup
-    fi
-    rm -rf ~/.backup/*
-    scp -rp "$PI_USER"@"$PI_IP":"$PI_BACKUP_PATH" ~/.backup
-    cp -r ~/.backup/backup/Documents ~/
-    cp -r ~/.backup/backup/.ssh ~/
-    cp -r ~/.backup/backup/.gnupg ~/
-    cp -r ~/.backup/backup/.password-store ~/
 }
 
 function wifi_status() {
@@ -102,20 +68,6 @@ function wifi_disconnect() {
 
 function to_upper() {
     echo $1 | tr a-z A-Z
-}
-
-function stock() {
-    SYMBOL=$(to_upper $1)
-    curl https://terminal-stocks.herokuapp.com/$SYMBOL
-}
-
-function stock_historical() {
-    SYMBOL=$(to_upper $1)
-    if [ "$2" ]; then
-        curl https://terminal-stocks.herokuapp.com/historical/$SYMBOL?page=$2
-    else
-        curl https://terminal-stocks.herokuapp.com/historical/$SYMBOL
-    fi
 }
 
 # enable programmable completion features (you don't need to enable
