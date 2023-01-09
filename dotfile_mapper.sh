@@ -36,6 +36,13 @@ fi
 
 ln -s "$PWD/.bashrc" "$HOME/.bashrc"
 
+# map zshrc config
+if [ -f "$HOME/.zshrc" ]; then
+    rm "$HOME/.zshrc"
+fi
+
+ln -s "$PWD/.zshrc" "$HOME/.zshrc"
+
 # maps touchpad config, that enables tap to click
 if [ -f "/etc/X11/xorg.conf.d/40-libinput.conf" ]; then
     sudo rm "/etc/X11/xorg.conf.d/40-libinput.conf"
