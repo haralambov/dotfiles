@@ -12,6 +12,11 @@ instance=Master
 interval=once
 signal=10
 
+[battery]
+label=
+command=~/Projects/dotfiles/scripts/battery.sh
+interval=60
+
 [time]
 command=date '+ %d-%b-%Y %H:%M %P'
 interval=60
