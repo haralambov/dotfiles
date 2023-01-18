@@ -76,3 +76,6 @@ vim.api.nvim_set_keymap('n', 'N', 'Nzz', { noremap = true })
 -- Allows moving up and down visually selected lines
 vim.api.nvim_set_keymap('v', 'J', ":m '>+1<CR>gv=gv", { noremap = true })
 vim.api.nvim_set_keymap('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true })
+
+-- Join lines without moving the cursor
+vim.api.nvim_set_keymap('n', 'J', "mzJ`z", { noremap = true })
