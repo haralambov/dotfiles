@@ -79,3 +79,6 @@ vim.api.nvim_set_keymap('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true })
 
 -- Join lines without moving the cursor
 vim.api.nvim_set_keymap('n', 'J', "mzJ`z", { noremap = true })
+
+-- Preserve last register when pasting over
+vim.api.nvim_set_keymap('x', '<LEADER>p', "\"_dP", { noremap = true })
