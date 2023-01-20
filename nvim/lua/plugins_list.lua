@@ -3,6 +3,7 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin', '~/.config/nvim/plugged')
 
+Plug 'williamboman/mason.nvim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -39,3 +40,4 @@ require('plugins_configs/comment')
 require('plugins_configs/autopairs')
 require('plugins_configs/gitgutter')
 require('plugins_configs/leap')
+require('plugins_configs/mason')
