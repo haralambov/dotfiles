@@ -149,6 +149,42 @@ function to_upper() {
     echo $1 | tr a-z A-Z
 }
 
+function pomodoro_work_session() {
+    notify-send -i ~/Projects/dotfiles/images/work.png "Time for work" "Session ends at $(get_pomodoro_time 25)"
+    $(play_notification)
+    sleep 25m
+}
+
+function pomodoro_short_break() {
+    notify-send -i ~/Projects/dotfiles/images/break.png "Short break" "Get back at $(get_pomodoro_time 5)"
+    $(play_notification)
+    sleep 5m
+}
+
+function pomodoro_long_break() {
+    notify-send -i ~/Projects/dotfiles/images/break.png "Long break" "Get back at $(get_pomodoro_time 25)"
+    $(play_notification)
+    sleep 25m
+}
+
+function get_pomodoro_time() {
+    date --date="+ $1 minutes" +"%H:%M"
+}
+
+function play_notification() {
+    play -q ~/Projects/dotfiles/sounds/notification.mp3
+}
+
+function full_pomodoro() {
+    for i in {1..3}
+    do
+        pomodoro_work_session
+        pomodoro_short_break
+    done
+    pomodoro_work_session
+    pomodoro_long_break
+}
+
 alias myip="curl http://ipecho.net/plain; echo"
 alias grep='grep --color=auto'
 alias py='python3.9'
