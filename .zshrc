@@ -150,19 +150,19 @@ function to_upper() {
 }
 
 function pomodoro_work_session() {
-    notify-send -i ~/Projects/dotfiles/images/work.png "Time for work" "Session ends at $(get_pomodoro_time 25)"
+    notify-send -t 2000 -i ~/Projects/dotfiles/images/work.png "Time for work" "Session ends at $(get_pomodoro_time 25)"
     $(play_notification)
     sleep 25m
 }
 
 function pomodoro_short_break() {
-    notify-send -i ~/Projects/dotfiles/images/break.png "Short break" "Get back at $(get_pomodoro_time 5)"
+    notify-send -t 2000 -i ~/Projects/dotfiles/images/break.png "Short break" "Get back at $(get_pomodoro_time 5)"
     $(play_notification)
     sleep 5m
 }
 
 function pomodoro_long_break() {
-    notify-send -i ~/Projects/dotfiles/images/break.png "Long break" "Get back at $(get_pomodoro_time 25)"
+    notify-send -t 2000 -i ~/Projects/dotfiles/images/break.png "Long break" "Get back at $(get_pomodoro_time 25)"
     $(play_notification)
     sleep 25m
 }
