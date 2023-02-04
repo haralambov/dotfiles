@@ -106,7 +106,6 @@ source $ZSH/oh-my-zsh.sh
 
 . "$HOME/.cargo/env"
 export EDITOR=nvim
-emulate sh -c 'source /etc/profile.d/apps-bin-path.sh'
 
 # automatically start X if tty1
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
@@ -187,7 +186,7 @@ function full_pomodoro() {
 
 alias myip="curl http://ipecho.net/plain; echo"
 alias grep='grep --color=auto'
-alias py='python3.9'
+alias py='python'
 alias src='source ~/.zshrc'
 alias ft='grep -RinH --exclude-dir=.git --exclude=tags '
 alias ls='ls --color'
@@ -207,8 +206,8 @@ alias vim='nvim'
 alias vi='nvim'
 alias v='nvim'
 alias cl='clear'
-alias update='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt clean && sudo apt autoclean && sudo apt autoremove && sudo snap refresh'
-alias remove_residual_packages="sudo apt-get remove --purge $(dpkg -l | grep \"^rc\" | awk '{print $2}')"
+alias update='sudo paru -Syyu'
+alias remove_orphans='pacman -Qtdq | sudo pacman -Rns'
 alias clear_logs='sudo rm -rf /var/log/journal/*'
 alias desk='cd ~/Desktop/'
 alias doc='cd ~/Documents/'
