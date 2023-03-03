@@ -235,3 +235,4 @@ alias gds='git diff --staged'
 alias show_zombies="ps aux | grep -E \"Z|defunct\""
 alias show_parent_process="ps -o ppid= -p "
 
+pfetch
