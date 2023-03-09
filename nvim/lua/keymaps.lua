@@ -82,3 +82,8 @@ vim.api.nvim_set_keymap('n', 'J', "mzJ`z", { noremap = true })
 
 -- Preserve last register when pasting over
 vim.api.nvim_set_keymap('x', '<LEADER>p', "\"_dP", { noremap = true })
+
+-- Switch to left/right tab
+vim.api.nvim_set_keymap('n', '<', ':tabprevious<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '>', ':tabnext<CR>', { noremap = true })
+
