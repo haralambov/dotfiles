@@ -106,6 +106,7 @@ source $ZSH/oh-my-zsh.sh
 
 . "$HOME/.cargo/env"
 export EDITOR=nvim
+export VISUAL=nvim
 
 # automatically start X if tty1
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
