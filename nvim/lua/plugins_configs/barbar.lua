@@ -126,9 +126,9 @@ map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
 -- Close commands
 --                 :BufferCloseAllButCurrent
 --                 :BufferCloseAllButPinned
---                 :BufferCloseAllButCurrentOrPinned
 --                 :BufferCloseBuffersLeft
 --                 :BufferCloseBuffersRight
+map('n', '<A-X>', '<Cmd>BufferCloseAllButCurrentOrPinned<CR>', opts)
 -- Magic buffer-picking mode
 map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
 -- Sort automatically by...
