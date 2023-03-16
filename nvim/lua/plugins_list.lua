@@ -27,6 +27,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'ggandor/leap.nvim'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+Plug 'romgrk/barbar.nvim'
 
 vim.call('plug#end')
 
@@ -41,3 +42,4 @@ require('plugins_configs/autopairs')
 require('plugins_configs/gitgutter')
 require('plugins_configs/leap')
 require('plugins_configs/mason')
+require('plugins_configs/barbar')
