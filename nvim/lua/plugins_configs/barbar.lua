@@ -33,11 +33,11 @@ require'bufferline'.setup {
   },
 
   -- Excludes buffers from the tabline
-  exclude_ft = {'javascript'},
-  exclude_name = {'package.json'},
+  -- exclude_ft = {'javascript'},
+  -- exclude_name = {'package.json'},
 
   -- Hide inactive buffers and file extensions. Other options are `alternate`, `current`, and `visible`.
-  hide = {extensions = true, inactive = true},
+  hide = {extensions = false, inactive = false},
 
   -- Disable highlighting alternate buffers
   highlight_alternate = false,
@@ -93,7 +93,7 @@ require'bufferline'.setup {
 
   -- Sets the name of unnamed buffers. By default format is "[Buffer X]"
   -- where X is the buffer number. But only a static string is accepted here.
-  no_name_title = nil,
+  no_name_title = 'New file',
 }
 
 
