@@ -28,7 +28,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'ggandor/leap.nvim'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'romgrk/barbar.nvim'
-Plug 'tanvirtin/monokai.nvim'
 
 vim.call('plug#end')
 
