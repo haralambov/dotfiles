@@ -18,6 +18,12 @@ fi
 
 ln -s "$PWD/.zshrc" "$HOME/.zshrc"
 
+if [ -f "$HOME/.p10k.zsh" ]; then
+    rm "$HOME/.p10k.zsh"
+fi
+
+ln -s "$PWD/.p10k.zsh" "$HOME/.p10k.zsh"
+
 ## map i3 config
 #if [ ! -d "$HOME/.config/i3" ]; then
 #    mkdir "$HOME/.config/i3"
