@@ -16,6 +16,7 @@ plugins=(
     git
     zsh-autosuggestions
     web-search
+    ohmyzsh-full-autoupdate
 )
 
 source $ZSH/oh-my-zsh.sh
