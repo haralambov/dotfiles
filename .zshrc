@@ -9,12 +9,14 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
+UPDATE_ZSH_DAYS=14
 
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 plugins=(
     git
     zsh-autosuggestions
+    zsh-syntax-highlighting
     web-search
     ohmyzsh-full-autoupdate
 )
@@ -89,7 +91,49 @@ alias show_parent_process="ps -o ppid= -p "
 alias fix_keyboard="/usr/bin/setxkbmap -option \"caps:swapescape\" -option altwin:swap_alt_win"
 alias \g='google'
 
-bindkey -v # enables Vi mode
+
+#########
+# vi mode
+#########
+
+bindkey -v
+
+# Vim-like navigation when doing tab-complete
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+
+bindkey "^X^E" edit-command-line
+
+# switch to command mode with jj
+bindkey '^j' vi-cmd-mode
+
+# Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
+export KEYTIMEOUT=1
+
+# incremental search in insert mode
+bindkey "^F" history-incremental-search-forward
+bindkey "^R" history-incremental-search-backward
+
+# beginning search with arrow keys and j/k
+bindkey "^[OA" up-line-or-beginning-search
+bindkey "^[OB" down-line-or-beginning-search
+bindkey -M vicmd "k" up-line-or-beginning-search
+bindkey -M vicmd "j" down-line-or-beginning-search
+
+# beginning search in insert mode, redundant with the up/down arrows above
+# but a little easier to press.
+bindkey "^P" history-search-backward
+bindkey "^N" history-search-forward
+
+# incremental search in vi command mode
+bindkey -M vicmd '?' history-incremental-search-backward
+bindkey -M vicmd '/' history-incremental-search-forward
+
+# navigate matches in incremental search
+bindkey -M viins '^R' history-incremental-pattern-search-backward
+bindkey -M viins '^F' history-incremental-pattern-search-forward
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
