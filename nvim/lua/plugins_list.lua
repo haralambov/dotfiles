@@ -21,7 +21,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'terrortylor/nvim-comment'
 Plug 'windwp/nvim-autopairs'
-Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'romainl/vim-cool'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
@@ -39,7 +39,7 @@ require('plugins_configs/lualine')
 require('plugins_configs/cmp')
 require('plugins_configs/comment')
 require('plugins_configs/autopairs')
-require('plugins_configs/gitgutter')
+require('plugins_configs/gitsigns')
 require('plugins_configs/leap')
 require('plugins_configs/mason')
 require('plugins_configs/barbar')
