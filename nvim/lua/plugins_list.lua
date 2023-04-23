@@ -3,8 +3,10 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin', '~/.config/nvim/plugged')
 
+Plug 'navarasu/onedark.nvim'
+Plug 'lewis6991/gitsigns.nvim'
+
 Plug 'williamboman/mason.nvim'
-Plug 'gruvbox-community/gruvbox'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -21,7 +23,6 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'terrortylor/nvim-comment'
 Plug 'windwp/nvim-autopairs'
-Plug 'lewis6991/gitsigns.nvim'
 Plug 'romainl/vim-cool'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
