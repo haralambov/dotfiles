@@ -87,3 +87,5 @@ vim.api.nvim_set_keymap('x', '<LEADER>p', "\"_dP", { noremap = true })
 vim.api.nvim_set_keymap('n', '<', ':tabprevious<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '>', ':tabnext<CR>', { noremap = true })
 
+vim.api.nvim_set_keymap('n', '<LEADER>g', ':Git<CR>', { noremap = true })
+vim.api.nvim_set_keymap('v', '<LEADER>g', ':Git<CR>', { noremap = true })
