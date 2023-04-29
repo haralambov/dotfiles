@@ -8,9 +8,11 @@ vim.opt.ignorecase = true
 vim.opt.incsearch = true
 vim.opt.swapfile = false
 vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.cache/undodir"
+vim.opt.undofile = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.updatetime = 300
+vim.opt.updatetime = 50
 vim.opt.scrolloff = 5
 vim.opt.list = true
 vim.opt.signcolumn = 'yes'
@@ -28,3 +30,4 @@ vim.opt.cursorline = true
 vim.opt.colorcolumn = "80"
 vim.opt.showmode = false
 vim.opt.lazyredraw = true
+

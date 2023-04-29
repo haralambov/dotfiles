@@ -1,46 +1,71 @@
--- plugins list
-local Plug = vim.fn['plug#']
+vim.cmd [[packadd packer.nvim]]
 
-vim.call('plug#begin', '~/.config/nvim/plugged')
+return require('packer').startup(function(use)
+    use 'wbthomason/packer.nvim'
 
-Plug 'navarasu/onedark.nvim'
-Plug 'lewis6991/gitsigns.nvim'
+    use({
+        'rose-pine/neovim',
+        as = 'rose-pine',
+        config = function()
+            vim.cmd('colorscheme rose-pine')
+        end
+    })
 
-Plug 'williamboman/mason.nvim'
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'L3MON4D3/LuaSnip'
-Plug 'saadparwaiz1/cmp_luasnip'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'terrortylor/nvim-comment'
-Plug 'windwp/nvim-autopairs'
-Plug 'romainl/vim-cool'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'ggandor/leap.nvim'
-Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
-Plug 'romgrk/barbar.nvim'
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
 
-vim.call('plug#end')
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
 
-require('plugins_configs/theme')
-require('plugins_configs/lsp')
-require('plugins_configs/telescope')
-require('plugins_configs/tree')
-require('plugins_configs/lualine')
-require('plugins_configs/cmp')
-require('plugins_configs/comment')
-require('plugins_configs/autopairs')
-require('plugins_configs/gitsigns')
-require('plugins_configs/leap')
-require('plugins_configs/mason')
-require('plugins_configs/barbar')
+            ts_update()
+        end,
+    }
+
+    use 'ThePrimeagen/harpoon'
+    use 'mbbill/undotree'
+    use 'tpope/vim-fugitive'
+    use 'tpope/vim-commentary'
+    use 'tpope/vim-surround'
+    use 'lewis6991/gitsigns.nvim'
+
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v2.x',
+        requires = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},             -- Required
+            {                                      -- Optional
+                'williamboman/mason.nvim',
+                run = function()
+                    pcall(vim.cmd, 'MasonUpdate')
+                end,
+            },
+            {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},     -- Required
+            {'hrsh7th/cmp-nvim-lsp'}, -- Required
+            {'L3MON4D3/LuaSnip'},     -- Required
+        }
+    }
+
+    use 'nvim-tree/nvim-web-devicons'
+    use 'nvim-tree/nvim-tree.lua'
+    use {
+        'romgrk/barbar.nvim',
+        requires = 'nvim-web-devicons'
+    }
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+    use 'romainl/vim-cool'
+end)

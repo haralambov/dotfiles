@@ -4,8 +4,9 @@ require("nvim-tree").setup({
     },
     view = {
         side = "left",
-        width = 35
+        width = 35,
+        relativenumber = true
     }
 })
 
-vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true })
+vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true })

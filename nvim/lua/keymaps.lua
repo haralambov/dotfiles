@@ -1,91 +1,71 @@
 -- Double 'j' to switch to normal mode
-vim.api.nvim_set_keymap('i', 'jj', '<ESC>', { noremap = true })
+vim.keymap.set('i', 'jj', '<ESC>')
 
 -- Leader + q to close the buffer
-vim.api.nvim_set_keymap('n', '<LEADER>q', ':q<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>q', ':q<CR>')
 
 -- Leader + Q to close all buffers without saving
-vim.api.nvim_set_keymap('n', '<LEADER>Q', ':qa<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>Q', ':qa<CR>')
 
 -- Better tabbing, reselect tabbed text
-vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true })
-vim.api.nvim_set_keymap('v', '<', '<gv', { noremap = true })
+vim.keymap.set('v', '>', '>gv')
+vim.keymap.set('v', '<', '<gv')
 
 -- Backspace - cycle between current and most recent file
-vim.api.nvim_set_keymap('n', '<BS>', '<C-^>', { noremap = true })
+vim.keymap.set('n', '<BS>', '<C-^>')
 
 -- Alt + hjkl to resize windows
-vim.api.nvim_set_keymap('n', '<A-h>', ':vertical resize +3<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<A-j>', ':resize +3<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<A-k>', ':resize -3<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<A-l>', ':vertical resize -3<CR>', { noremap = true })
+vim.keymap.set('n', '<A-h>', ':vertical resize +3<CR>')
+vim.keymap.set('n', '<A-j>', ':resize +3<CR>')
+vim.keymap.set('n', '<A-k>', ':resize -3<CR>')
+vim.keymap.set('n', '<A-l>', ':vertical resize -3<CR>')
 
 -- Control + hjkl to jump between splits
-vim.api.nvim_set_keymap('n', '<C-h>', '<C-w><C-h>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-j>', '<C-w><C-j>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-k>', '<C-w><C-k>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-l>', '<C-w><C-l>', { noremap = true })
+vim.keymap.set('n', '<C-h>', '<C-w><C-h>')
+vim.keymap.set('n', '<C-j>', '<C-w><C-j>')
+vim.keymap.set('n', '<C-k>', '<C-w><C-k>')
+vim.keymap.set('n', '<C-l>', '<C-w><C-l>')
 
 -- Scroll up and down the window 5 lines at a time
-vim.api.nvim_set_keymap('n', '<C-e>', '5<C-e>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-y>', '5<C-y>', { noremap = true })
+vim.keymap.set('n', '<C-e>', '5<C-e>')
+vim.keymap.set('n', '<C-y>', '5<C-y>')
 
 -- Reselect pasted text
-vim.api.nvim_set_keymap('n', 'gp', '`[v`]', { noremap = true })
-
--- Opens a terminal in a split below the current buffer
-vim.api.nvim_set_keymap('n', '<LEADER>t', ':15sp<CR>:terminal<CR>a', { noremap = true })
-
--- Opens a terminal in a new tab
-vim.api.nvim_set_keymap('n', '<LEADER>T', ':tabnew<CR>:terminal<CR>a', { noremap = true })
-
--- Out to normal mode in terminal
-vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-n>', { noremap = true })
-vim.api.nvim_set_keymap('t', 'jj', '<C-\\><C-n>', { noremap = true })
+vim.keymap.set('n', 'gp', '`[v`]')
 
 -- Easier splits: | splits right, - splits below
-vim.api.nvim_set_keymap('n', '<BAR>', ':vsp %<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '-', ':sp %<CR>', { noremap = true })
+vim.keymap.set('n', '<BAR>', ':vsp %<CR>')
+vim.keymap.set('n', '-', ':sp %<CR>')
 
 -- Leader + s to save all files
-vim.api.nvim_set_keymap('n', '<LEADER>s', ':wa<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>s', ':wa<CR>')
 
 -- Go to next quickfix list item
-vim.api.nvim_set_keymap('n', '<LEADER>n', ':cnext<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>n', ':cnext<CR>')
 
 -- Go to previous quickfix list item
-vim.api.nvim_set_keymap('n', '<LEADER>p', ':cprevious<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>p', ':cprevious<CR>')
 
 -- Close quickfix list window
-vim.api.nvim_set_keymap('n', '<LEADER>cc', ':cclose<CR>', { noremap = true })
-
--- Make the current window the only one on the screen
-vim.api.nvim_set_keymap('n', '<LEADER>o', ':on<CR>', { noremap = true })
-
--- Close all other tab pages
-vim.api.nvim_set_keymap('n', '<LEADER>O', ':on<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>cc', ':cclose<CR>')
 
 -- Go down/up by half a page and center the cursor
-vim.api.nvim_set_keymap('n', '<C-d>', '<C-d>zz', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>zz', { noremap = true })
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
 -- Center the cursor when going from search to search
-vim.api.nvim_set_keymap('n', 'n', 'nzz', { noremap = true })
-vim.api.nvim_set_keymap('n', 'N', 'Nzz', { noremap = true })
+vim.keymap.set('n', 'n', 'nzz')
+vim.keymap.set('n', 'N', 'Nzz')
 
 -- Allows moving up and down visually selected lines
-vim.api.nvim_set_keymap('v', 'J', ":m '>+1<CR>gv=gv", { noremap = true })
-vim.api.nvim_set_keymap('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true })
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
 -- Join lines without moving the cursor
-vim.api.nvim_set_keymap('n', 'J', "mzJ`z", { noremap = true })
+vim.keymap.set('n', 'J', "mzJ`z")
 
 -- Preserve last register when pasting over
-vim.api.nvim_set_keymap('x', '<LEADER>p', "\"_dP", { noremap = true })
+vim.keymap.set('x', '<leader>p', "\"_dP")
 
--- Switch to left/right tab
-vim.api.nvim_set_keymap('n', '<', ':tabprevious<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '>', ':tabnext<CR>', { noremap = true })
-
-vim.api.nvim_set_keymap('n', '<LEADER>g', ':Git<CR>', { noremap = true })
-vim.api.nvim_set_keymap('v', '<LEADER>g', ':Git<CR>', { noremap = true })
+-- Shortcuts for calling fugitive's git wrapper
+vim.keymap.set({ 'n', 'v' }, '<leader>g', ':Git<CR>')
