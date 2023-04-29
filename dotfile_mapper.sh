@@ -16,13 +16,13 @@ if [ -f "$HOME/.zshrc" ]; then
     rm "$HOME/.zshrc"
 fi
 
-ln -s "$PWD/.zshrc" "$HOME/.zshrc"
+ln -s "$PWD/config/shell/.zshrc" "$HOME/.zshrc"
 
 if [ -f "$HOME/.p10k.zsh" ]; then
     rm "$HOME/.p10k.zsh"
 fi
 
-ln -s "$PWD/.p10k.zsh" "$HOME/.p10k.zsh"
+ln -s "$PWD/config/shell/.p10k.zsh" "$HOME/.p10k.zsh"
 
 # map tmux config
 if [ -f "$HOME/.config/tmux/tmux.conf" ]; then
