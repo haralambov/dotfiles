@@ -29,5 +29,5 @@ if [ -f "$HOME/.config/tmux/tmux.conf" ]; then
     rm "$HOME/.config/tmux/tmux.conf"
 fi
 
-ln -s "$PWD/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
+ln -s "$PWD/config/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
 
