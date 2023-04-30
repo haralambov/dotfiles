@@ -3,13 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
-    use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine')
-        end
-    })
+    use ({ "catppuccin/nvim", as = "catppuccin" })
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',

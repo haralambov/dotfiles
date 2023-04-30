@@ -8,3 +8,4 @@ require('plugins_configs/cmp') -- this has to be after the lsp config
 require('plugins_configs/lualine')
 require('plugins_configs/barbar')
 require('plugins_configs/tree')
+require('plugins_configs/theme')
