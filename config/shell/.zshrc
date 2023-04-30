@@ -44,15 +44,15 @@ alias grep='grep --color=auto'
 alias py='python'
 alias src='source ~/.zshrc'
 alias ft='grep -RinH --exclude-dir=.git --exclude=tags '
-alias ls='ls -F --color'
-alias ll='ls -lah --color'
+alias ls='exa --color=always --icons'
+alias ll='exa -lah --color=always --icons'
 alias l='ll;'
 alias b='cd ..'
 alias f='cd -'
 alias ram='free -h'
 alias random='openssl rand -base64 48'
 alias off='sudo shutdown -h now'
-alias size='du -sh '
+alias size='dust'
 alias failed='sudo systemctl --failed'
 alias his='history | grep '
 alias fs='sudo \df -h /'
@@ -91,6 +91,8 @@ alias show_parent_process="ps -o ppid= -p "
 alias fix_keyboard="/usr/bin/setxkbmap -option \"caps:swapescape\" -option altwin:swap_alt_win"
 alias \g='google'
 alias ff='~/Projects/dotfiles/scripts/ff.sh'
+alias tree='exa -T'
+alias cat='bat --style=numbers --color=always'
 
 
 #########
