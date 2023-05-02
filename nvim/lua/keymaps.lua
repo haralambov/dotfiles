@@ -1,6 +1,9 @@
 -- Double 'j' to switch to normal mode
 vim.keymap.set('i', 'jj', '<ESC>')
 
+-- Make Shift+Tab decrease indent
+vim.keymap.set('i', '<S-Tab>', '<C-d>')
+
 -- Leader + q to close the buffer
 vim.keymap.set('n', '<leader>q', ':q<CR>')
 
