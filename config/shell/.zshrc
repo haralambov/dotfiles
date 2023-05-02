@@ -88,7 +88,7 @@ alias gd='git diff'
 alias gds='git diff --staged'
 alias show_zombies="ps aux | grep -E \"Z|defunct\""
 alias show_parent_process="ps -o ppid= -p "
-alias fix_keyboard="/usr/bin/setxkbmap -option \"caps:swapescape\" -option altwin:swap_alt_win"
+alias fix_keyboard="/usr/bin/setxkbmap -option \"caps:swapescape\""
 alias \g='google'
 alias ff='~/Projects/dotfiles/scripts/ff.sh'
 alias tree='exa -T'
