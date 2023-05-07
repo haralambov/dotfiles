@@ -62,4 +62,16 @@ return require('packer').startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
     use 'romainl/vim-cool'
+    use({
+        "utilyre/barbecue.nvim",
+        tag = "*",
+        requires = {
+            "SmiteshP/nvim-navic",
+            "nvim-tree/nvim-web-devicons", -- optional dependency
+        },
+        after = "nvim-web-devicons", -- keep this if you're using NvChad
+        config = function()
+            require("barbecue").setup()
+        end,
+    })
 end)
