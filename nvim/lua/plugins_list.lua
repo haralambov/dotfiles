@@ -49,10 +49,10 @@ return require('packer').startup(function(use)
 
     use 'nvim-tree/nvim-web-devicons'
     use 'nvim-tree/nvim-tree.lua'
-    use {
-        'romgrk/barbar.nvim',
-        requires = 'nvim-web-devicons'
-    }
+    use {'romgrk/barbar.nvim', requires = {
+        'lewis6991/gitsigns.nvim',
+        'nvim-tree/nvim-web-devicons',
+    }}
     use {
       'nvim-lualine/lualine.nvim',
       requires = { 'nvim-tree/nvim-web-devicons', opt = true }

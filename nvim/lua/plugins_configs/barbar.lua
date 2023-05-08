@@ -89,7 +89,7 @@ require'barbar'.setup {
     -- Configure the base icons on the bufferline.
     buffer_index = false,
     buffer_number = false,
-    button = '',
+    button = '×',
     -- Enables / disables diagnostic symbols
     diagnostics = {
       [vim.diagnostic.severity.ERROR] = {enabled = true, icon = 'ﬀ'},
@@ -110,7 +110,7 @@ require'barbar'.setup {
     -- Configure the icons on the bufferline when modified or pinned.
     -- Supports all the base icon options.
     modified = {button = '●'},
-    pinned = {button = '車', filename = true, separator = {right = ''}},
+    pinned = {button = '', filename = true, separator = {right = ''}},
 
     -- Configure the icons on the bufferline based on the visibility of a buffer.
     -- Supports all the base icon options, plus `modified` and `pinned`.
