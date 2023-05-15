@@ -85,4 +85,12 @@ return require('packer').startup(function(use)
         'ggandor/leap.nvim',
         config = function() require('leap').add_default_mappings() end
     }
+    use {
+        'rmagatti/goto-preview',
+        config = function()
+            require('goto-preview').setup {
+                default_mappings = true
+            }
+        end
+    }
 end)
