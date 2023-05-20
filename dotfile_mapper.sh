@@ -32,8 +32,8 @@ fi
 ln -s "$PWD/config/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
 
 # map gitconfig
-if [ -f "$HOME/.config/git/.gitconfig" ]; then
-    rm "$HOME/.config/git/.gitconfig"
+if [ -f "$HOME/.gitconfig" ]; then
+    rm "$HOME/.gitconfig"
 fi
 
 ln -s "$PWD/config/git/.gitconfig" "$HOME/.gitconfig"
