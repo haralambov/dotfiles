@@ -1,0 +1,18 @@
+live_config_reload: true
+
+window:
+  opacity: 0.92
+  padding:
+    x: 16
+    y: 16
+  dynamic_padding: false
+  decorations: "None"
+  dimensions:
+    columns: 120
+    lines: 36
+
+font:
+  normal:
+    family: "UbuntuMono Nerd Font Mono"
+    style: Regular
+  size: 14.0
