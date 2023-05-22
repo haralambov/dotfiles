@@ -39,8 +39,12 @@ fi
 if [ -f "$HOME/.config/alacritty/alacritty.yml" ]; then
     rm "$HOME/.config/alacritty/alacritty.yml"
 fi
+if [ -f "$HOME/.config/alacritty/catppuccin-frappe.yml" ]; then
+    rm "$HOME/.config/alacritty/catppuccin-frappe.yml"
+fi
 
 ln -s "$PWD/config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
+ln -s "$PWD/config/alacritty/catppuccin-frappe.yml" "$HOME/.config/alacritty/catppuccin-frappe.yml"
 
 # map gitconfig
 if [ -f "$HOME/.gitconfig" ]; then

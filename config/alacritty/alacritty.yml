@@ -1,7 +1,7 @@
 live_config_reload: true
 
 window:
-  opacity: 0.92
+  opacity: 0.95
   padding:
     x: 16
     y: 16
@@ -16,3 +16,6 @@ font:
     family: "UbuntuMono Nerd Font Mono"
     style: Regular
   size: 14.0
+
+import:
+  - ~/.config/alacritty/catppuccin-frappe.yml

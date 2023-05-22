@@ -93,6 +93,7 @@ alias \g='google'
 alias ff='~/Projects/dotfiles/scripts/ff.sh'
 alias tree='exa -T'
 alias cat='bat --style=numbers --color=always'
+alias find='fd'
 
 
 #########
