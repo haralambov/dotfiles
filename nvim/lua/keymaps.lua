@@ -72,3 +72,6 @@ vim.keymap.set('x', '<leader>p', "\"_dP")
 
 -- Shortcuts for calling fugitive's git wrapper
 vim.keymap.set({ 'n', 'v' }, '<leader>g', ':Git<CR>')
+
+-- Copy everything between { and } including the brackets
+vim.keymap.set('n', 'YY', 'va{Vy')
