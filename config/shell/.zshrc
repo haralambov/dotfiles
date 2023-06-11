@@ -11,6 +11,8 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 UPDATE_ZSH_DAYS=14
 
+PROMPT_EOL_MARK=''
+
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 plugins=(
