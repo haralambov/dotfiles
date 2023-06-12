@@ -143,3 +143,8 @@ bindkey -M viins '^F' history-incremental-pattern-search-forward
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# automatically start X if tty1
+if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
+    startx
+fi
