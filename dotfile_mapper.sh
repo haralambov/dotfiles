@@ -52,3 +52,13 @@ if [ -f "$HOME/.gitconfig" ]; then
 fi
 
 ln -s "$PWD/config/git/.gitconfig" "$HOME/.gitconfig"
+
+# map i3 config
+if [ ! -d "$HOME/.config/i3" ]; then
+    mkdir "$HOME/.config/i3"
+fi
+
+if [ -f "$HOME/.config/i3/config" ]; then
+    rm "$HOME/.config/i3/config"
+fi
+ln -s "$PWD/config/i3/config" "$HOME/.config/i3/config"
