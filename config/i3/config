@@ -27,13 +27,13 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec sakura
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id dmenu
 
 # change focus
 bindsym $mod+h focus left
@@ -124,7 +124,7 @@ for_window [instance="scratchpad"] floating enable
 for_window [instance="scratchpad"] resize set 800 600
 for_window [instance="scratchpad"] move scratchpad
 for_window [instance="scratchpad"] border pixel 5
-exec --no-startup-id sakura --name=scratchpad
+exec --no-startup-id alacritty --name=scratchpad
 
 bindsym $mod+Shift+Return [instance="scratchpad"] scratchpad show; [instance="scratchpad"] move position center
 
@@ -157,6 +157,12 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bindsym $mod+Tab workspace back_and_forth
+
+default_border pixel 3
+default_floating_border pixel 3
+smart_gaps inverse_outer
+gaps inner 10
+gaps outer 5
 
 bar {
     status_command i3blocks -c ~/Projects/dotfiles/config/i3blocks/config
