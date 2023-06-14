@@ -16,6 +16,3 @@ font:
     family: "UbuntuMono Nerd Font Mono"
     style: Regular
   size: 14.0
-
-import:
-  - ~/.config/alacritty/catppuccin-frappe.yml
