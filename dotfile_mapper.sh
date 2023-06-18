@@ -25,6 +25,9 @@ fi
 ln -s "$PWD/config/shell/.p10k.zsh" "$HOME/.p10k.zsh"
 
 # map tmux config
+if [ ! -d "$HOME/.config/tmux" ]; then
+    mkdir "$HOME/.config/tmux"
+fi
 if [ -f "$HOME/.config/tmux/tmux.conf" ]; then
     rm "$HOME/.config/tmux/tmux.conf"
 fi
@@ -39,12 +42,8 @@ fi
 if [ -f "$HOME/.config/alacritty/alacritty.yml" ]; then
     rm "$HOME/.config/alacritty/alacritty.yml"
 fi
-if [ -f "$HOME/.config/alacritty/catppuccin-frappe.yml" ]; then
-    rm "$HOME/.config/alacritty/catppuccin-frappe.yml"
-fi
 
 ln -s "$PWD/config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
-ln -s "$PWD/config/alacritty/catppuccin-frappe.yml" "$HOME/.config/alacritty/catppuccin-frappe.yml"
 
 # map gitconfig
 if [ -f "$HOME/.gitconfig" ]; then

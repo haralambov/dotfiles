@@ -6,13 +6,13 @@ window:
     x: 16
     y: 16
   dynamic_padding: false
-  decorations: "None"
+  decorations: full
   dimensions:
     columns: 120
     lines: 36
 
 font:
   normal:
-    family: "UbuntuMono Nerd Font Mono"
+    family: "FiraCode Nerd Font"
     style: Regular
-  size: 14.0
+  size: 10.0

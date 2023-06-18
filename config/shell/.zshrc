@@ -7,6 +7,7 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export PATH="$PATH:/snap/bin"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 UPDATE_ZSH_DAYS=14
@@ -63,7 +64,7 @@ alias vim='nvim'
 alias vi='nvim'
 alias v='nvim'
 alias cl='clear'
-alias update='paru -Syyu'
+alias update='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt clean && sudo apt autoclean && sudo apt autoremove'
 alias remove_orphans='pacman -Qtdq | sudo pacman -Rns'
 alias clear_logs='sudo rm -rf /var/log/journal/*'
 alias desk='cd ~/Desktop/'
@@ -90,12 +91,12 @@ alias gd='git diff'
 alias gds='git diff --staged'
 alias show_zombies="ps aux | grep -E \"Z|defunct\""
 alias show_parent_process="ps -o ppid= -p "
-alias fix_keyboard="/usr/bin/setxkbmap -option \"caps:swapescape\""
+alias fix_keyboard="setxkbmap -option; setxkbmap -option \"caps:swapescape\" -option grp:ctrls_toggle,grp_led:scroll us,bg -variant ,phonetic"
 alias \g='google'
 alias ff='~/Projects/dotfiles/scripts/ff.sh'
 alias tree='exa -T'
-alias cat='bat --style=numbers --color=always'
-alias find='fd'
+alias cat='batcat --style=numbers --color=always'
+alias find='fdfind'
 
 
 #########
@@ -143,8 +144,3 @@ bindkey -M viins '^F' history-incremental-pattern-search-forward
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# automatically start X if tty1
-if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
-    startx
-fi
