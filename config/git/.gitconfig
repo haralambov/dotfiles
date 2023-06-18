@@ -20,3 +20,6 @@
     colorMoved = default
 [init]
 	defaultBranch = master
+[user]
+	email = z.haralambov@gmail.com
+	name = Zlatomir Haralambov
