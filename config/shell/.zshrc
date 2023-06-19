@@ -144,3 +144,31 @@ bindkey -M viins '^F' history-incremental-pattern-search-forward
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+function wifi_status() {
+    STATUS=$(nmcli radio wifi)
+    echo "Wi-Fi status: $STATUS"
+}
+
+function wifi_enable() {
+    nmcli radio wifi on
+    wifi_status
+}
+
+function wifi_disable() {
+    nmcli radio wifi off
+    wifi_status
+}
+
+function wifi_list() {
+    nmcli dev wifi list
+}
+
+function wifi_connect() {
+    sudo nmcli --ask dev wifi connect $1
+}
+
+function wifi_disconnect() {
+    nmcli con down $1
+}
