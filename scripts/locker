@@ -1,4 +1,5 @@
 #!/bin/bash
+# Taken from https://gist.github.com/csivanich/10914698
 
 CURRENT_LANGUAGE=$(setxkbmap -query | grep -i layout | awk '{print $2}' | cut -d\, -f1)
 if [[ $CURRENT_LANGUAGE != "us" ]]
@@ -6,4 +7,11 @@ then
     setxkbmap -layout us,bg -variant ,phonetic;
 fi
 
-slock
+IMAGE=/tmp/i3lock.png
+SCREENSHOT="scrot -z $IMAGE"
+BLURTYPE="0x5"
+
+$SCREENSHOT
+convert $IMAGE -blur $BLURTYPE $IMAGE
+i3lock -i $IMAGE -f
+rm $IMAGE

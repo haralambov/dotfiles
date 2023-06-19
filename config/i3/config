@@ -132,8 +132,8 @@ bindsym $mod+b exec firefox
 bindsym $mod+Shift+f exec thunar
 bindsym $mod+Shift+v exec diodon
 
-set $lock_command i3lock -f
-bindsym $mod+x exec $lock_command
+set $lock_command ~/Projects/dotfiles/scripts/locker
+bindsym $mod+x exec --no-startup-id $lock_command
 
 
 bindsym $mod+r mode "resize"
