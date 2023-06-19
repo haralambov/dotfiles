@@ -61,3 +61,10 @@ if [ -f "$HOME/.config/i3/config" ]; then
     rm "$HOME/.config/i3/config"
 fi
 ln -s "$PWD/config/i3/config" "$HOME/.config/i3/config"
+
+# maps touchpad config, that enables tap to click
+if [ -f "/etc/X11/xorg.conf.d/40-libinput.conf" ]; then
+    sudo rm "/etc/X11/xorg.conf.d/40-libinput.conf"
+fi
+
+sudo ln -s "$PWD/config/touchpad/40-libinput.conf" "/etc/X11/xorg.conf.d/40-libinput.conf"
