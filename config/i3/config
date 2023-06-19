@@ -15,7 +15,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+exec --no-startup-id dunst
 exec --no-startup-id diodon
+exec --no-startup-id nm-applet
 exec --no-startup-id gxkb
 exec --no-startup-id feh --bg-scale ~/Projects/dotfiles/images/wallpaper.jpg
 exec --no-startup-id redshift -P -O 4500
