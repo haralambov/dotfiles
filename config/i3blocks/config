@@ -17,5 +17,5 @@ command=~/Projects/dotfiles/scripts/battery.sh
 interval=60
 
 [time]
-command=date '+ %d-%b %a %H:%M %P'
+command=date '+%H:%M %P'
 interval=60
