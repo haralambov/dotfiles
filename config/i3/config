@@ -133,6 +133,7 @@ bindsym $mod+Shift+f exec thunar
 bindsym $mod+Shift+v exec diodon
 
 set $lock_command ~/Projects/dotfiles/scripts/locker
+exec --no-startup-id xautolock -time 5 -locker $lock_command
 bindsym $mod+x exec --no-startup-id $lock_command
 
 
