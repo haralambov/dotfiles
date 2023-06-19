@@ -13,7 +13,6 @@ interval=once
 signal=10
 
 [battery]
-label=
 command=~/Projects/dotfiles/scripts/battery.sh
 interval=60
 
