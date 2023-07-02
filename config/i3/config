@@ -182,9 +182,53 @@ default_border pixel 2
 default_floating_border pixel 2
 smart_borders on
 smart_gaps inverse_outer
-gaps inner 5
-gaps outer 5
+
+set $gaps_change 5
+set $default_inner_gaps 5
+set $default_outer_gaps 5
+gaps inner $default_inner_gaps
+gaps outer $default_outer_gaps
 
 bar {
     status_command i3blocks -c ~/Projects/dotfiles/config/i3blocks/config
+}
+
+# Reference: https://gist.github.com/comradecheese/b502ca67393217c1d238fd7fd6a42bd8
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps.
+# Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace).
+# If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+    bindsym o      mode "$mode_gaps_outer"
+    bindsym i      mode "$mode_gaps_inner"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+    bindsym plus  gaps inner current plus $gaps_change
+    bindsym minus gaps inner current minus $gaps_change
+    bindsym 0     gaps inner current set $default_inner_gaps
+
+    bindsym Shift+plus  gaps inner all plus $gaps_change
+    bindsym Shift+minus gaps inner all minus $gaps_change
+    bindsym Shift+0     gaps inner all set $default_inner_gaps
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+    bindsym plus  gaps outer current plus $gaps_change
+    bindsym minus gaps outer current minus $gaps_change
+    bindsym 0     gaps outer current set $default_outer_gaps
+
+    bindsym Shift+plus  gaps outer all plus $gaps_change
+    bindsym Shift+minus gaps outer all minus $gaps_change
+    bindsym Shift+0     gaps outer all set $default_outer_gaps
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
