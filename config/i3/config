@@ -196,6 +196,7 @@ gaps inner $default_inner_gaps
 gaps outer $default_outer_gaps
 
 bar {
+    workspace_min_width 50
     status_command i3blocks -c ~/Projects/dotfiles/config/i3blocks/config
 }
 
