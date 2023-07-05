@@ -120,6 +120,11 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+# enables floating and centering for certain windows
+# for Firefox'es Library/Downloads window
+for_window [title="Library"] floating enable move position center
+for_window [class="mpv|Thunar|feh"] floating enable move position center
+
 for_window [class="scratchpad"] floating enable
 for_window [class="scratchpad"] resize set 800 600
 for_window [class="scratchpad"] move scratchpad
