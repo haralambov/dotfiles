@@ -16,12 +16,12 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 exec --no-startup-id dunst
-exec --no-startup-id diodon
+exec --no-startup-id clipmenud
 exec --no-startup-id nm-applet
 exec --no-startup-id gxkb
 exec --no-startup-id feh --bg-scale ~/Projects/dotfiles/images/wallpaper.jpg
 exec --no-startup-id redshift -P -O 4500
-exec --no-startup-id compton
+exec --no-startup-id picom
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id alacritty
@@ -136,7 +136,7 @@ bindsym $mod+Shift+Return [class="scratchpad"] scratchpad show; [class="scratchp
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+b exec chromium
 bindsym $mod+Shift+f exec thunar
-bindsym $mod+Shift+v exec diodon
+bindsym $mod+Shift+v exec clipmenu
 
 set $lock_command ~/Projects/dotfiles/scripts/locker
 exec --no-startup-id xautolock -time 5 -locker $lock_command

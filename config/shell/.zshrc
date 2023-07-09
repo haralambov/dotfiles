@@ -64,7 +64,7 @@ alias vim='nvim'
 alias vi='nvim'
 alias v='nvim'
 alias cl='clear'
-alias update='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt clean && sudo apt autoclean && sudo apt autoremove'
+alias update='paru -Syyu'
 alias remove_orphans='pacman -Qtdq | sudo pacman -Rns'
 alias clear_logs='sudo rm -rf /var/log/journal/*'
 alias desk='cd ~/Desktop/'
@@ -95,7 +95,7 @@ alias fix_keyboard="setxkbmap -option; setxkbmap -option \"caps:swapescape\" -op
 alias \g='google'
 alias ff='~/Projects/dotfiles/scripts/ff.sh'
 alias tree='exa -T'
-alias cat='batcat --style=numbers --color=always'
+alias cat='bat --style=numbers --color=always'
 alias find='fdfind'
 
 

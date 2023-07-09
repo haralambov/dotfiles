@@ -1,5 +1,5 @@
 #!/bin/bash
-ACPI_OUTPUT=$(acpi)
+ACPI_OUTPUT=$(acpi | head -n 1)
 STATUS=$(echo $ACPI_OUTPUT | cut -d: -f2 | cut -d, -f1 | tr -d "[:space:]")
 PERCENTAGE=$(echo $ACPI_OUTPUT | cut -d, -f2 | tr -d "[:space:]")
 PERCENTAGE_VALUE=$(echo $PERCENTAGE | cut -d% -f1)
