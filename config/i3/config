@@ -133,10 +133,10 @@ exec --no-startup-id alacritty --class scratchpad
 
 bindsym $mod+Shift+Return [class="scratchpad"] scratchpad show; [class="scratchpad"] move position center
 
-bindsym $mod+b exec firefox
-bindsym $mod+Shift+b exec chromium
-bindsym $mod+Shift+f exec thunar
-bindsym $mod+Shift+v exec clipmenu
+bindsym $mod+b exec --no-startup-id firefox
+bindsym $mod+Shift+b exec --no-startup-id chromium
+bindsym $mod+Shift+f exec --no-startup-id thunar
+bindsym $mod+Shift+v exec --no-startup-id clipmenu -l 20
 
 set $lock_command ~/Projects/dotfiles/scripts/locker
 exec --no-startup-id xautolock -time 5 -locker $lock_command
