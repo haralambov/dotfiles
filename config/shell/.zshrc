@@ -28,7 +28,9 @@ source $ZSH/oh-my-zsh.sh
 
 ### CUSTOM CONFIGURATION
 
-. "$HOME/.cargo/env"
+if rustc --version 2>&1 1> /dev/null; then
+    . "$HOME/.cargo/env"
+fi
 export EDITOR=nvim
 export VISUAL=nvim
 
