@@ -11,6 +11,11 @@ command=~/Projects/dotfiles/scripts/volume.sh
 interval=once
 signal=10
 
+[temp]
+label= 
+command=sensors | grep -i core\ 0 | awk '{print $3}'
+interval=2
+
 [battery]
 command=~/Projects/dotfiles/scripts/battery.sh
 interval=60
