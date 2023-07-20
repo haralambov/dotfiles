@@ -62,6 +62,16 @@ if [ -f "$HOME/.config/i3/config" ]; then
 fi
 ln -s "$PWD/config/i3/config" "$HOME/.config/i3/config"
 
+# map picom config
+if [ ! -d "$HOME/.config/picom" ]; then
+    mkdir "$HOME/.config/picom"
+fi
+
+if [ -f "$HOME/.config/picom/picom.conf" ]; then
+    rm "$HOME/.config/picom/picom.conf"
+fi
+ln -s "$PWD/config/picom/picom.conf" "$HOME/.config/picom/picom.conf"
+
 # maps touchpad config, that enables tap to click
 if [ -f "/etc/X11/xorg.conf.d/40-libinput.conf" ]; then
     sudo rm "/etc/X11/xorg.conf.d/40-libinput.conf"
