@@ -100,6 +100,11 @@ alias tree='exa -T'
 alias cat='bat --style=numbers --color=always'
 alias find='fdfind'
 
+# devour aliases
+alias mpv="devour mpv"
+alias zathura="devour zathura"
+alias feh="devour feh"
+
 
 #########
 # vi mode
