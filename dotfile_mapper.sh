@@ -72,6 +72,16 @@ if [ -f "$HOME/.config/picom/picom.conf" ]; then
 fi
 ln -s "$PWD/config/picom/picom.conf" "$HOME/.config/picom/picom.conf"
 
+# map ranger config
+if [ ! -d "$HOME/.config/ranger" ]; then
+    mkdir "$HOME/.config/ranger"
+fi
+
+if [ -f "$HOME/.config/ranger/picom.conf" ]; then
+    rm "$HOME/.config/ranger/rc.conf"
+fi
+ln -s "$PWD/config/ranger/rc.conf" "$HOME/.config/ranger/rc.conf"
+
 # maps touchpad config, that enables tap to click
 if [ -f "/etc/X11/xorg.conf.d/40-libinput.conf" ]; then
     sudo rm "/etc/X11/xorg.conf.d/40-libinput.conf"
