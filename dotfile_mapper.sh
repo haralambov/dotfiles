@@ -77,7 +77,7 @@ if [ ! -d "$HOME/.config/ranger" ]; then
     mkdir "$HOME/.config/ranger"
 fi
 
-if [ -f "$HOME/.config/ranger/picom.conf" ]; then
+if [ -f "$HOME/.config/ranger/rc.conf" ]; then
     rm "$HOME/.config/ranger/rc.conf"
 fi
 ln -s "$PWD/config/ranger/rc.conf" "$HOME/.config/ranger/rc.conf"
