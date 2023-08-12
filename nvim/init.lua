@@ -1,5 +1,6 @@
 require('settings')
 require('keymaps')
 require('abbreviations')
+require('autocommands')
 require('plugins_list')
 require('load_plugin_configs')
