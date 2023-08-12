@@ -123,7 +123,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # enables floating and centering for certain windows
 # for Firefox'es Library/Downloads window
 for_window [title="Library"] floating enable move position center
-for_window [class="mpv|Thunar|feh"] floating enable move position center
+for_window [class="mpv|feh"] floating enable move position center
 
 for_window [class="scratchpad"] floating enable
 for_window [class="scratchpad"] resize set 1024 768
@@ -135,7 +135,7 @@ bindsym $mod+Shift+Return [class="scratchpad"] scratchpad show; [class="scratchp
 
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+Shift+b exec --no-startup-id chromium
-bindsym $mod+Shift+f exec --no-startup-id thunar
+bindsym $mod+Shift+f exec --no-startup-id alacritty -e ranger
 bindsym $mod+Shift+v exec --no-startup-id clipmenu -l 20
 
 set $lock_command ~/Projects/dotfiles/scripts/locker
