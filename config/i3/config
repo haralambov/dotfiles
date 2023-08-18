@@ -139,7 +139,7 @@ bindsym $mod+Shift+f exec --no-startup-id alacritty -e ranger
 bindsym $mod+Shift+v exec --no-startup-id clipmenu -l 20
 
 set $lock_command ~/Projects/dotfiles/scripts/locker
-exec --no-startup-id xautolock -time 5 -locker $lock_command
+exec --no-startup-id xautolock -time 5 -corners ---- -locker $lock_command
 bindsym $mod+x exec --no-startup-id $lock_command
 
 
