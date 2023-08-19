@@ -95,6 +95,7 @@ return require('packer').startup(function(use)
         end
     }
     use "folke/trouble.nvim"
+    use "folke/zen-mode.nvim"
     use {
         "folke/todo-comments.nvim",
         requires = "nvim-lua/plenary.nvim",
