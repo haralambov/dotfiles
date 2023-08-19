@@ -11,4 +11,17 @@ lsp.on_attach(function(client, buffnr)
     vim.keymap.set('n', '<leader>fm', function() vim.lsp.buf.format() end, bufopts)
 end)
 
+local signs = {
+    Error = "",
+    Warning = "⚠️",
+    Hint = "",
+    Information = "",
+    Other = ""
+}
+
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
+end
+
 lsp.setup()
