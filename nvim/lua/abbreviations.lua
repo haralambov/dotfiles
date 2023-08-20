@@ -1,1 +1,7 @@
-vim.cmd('abb todo //TODO:')
+vim.cmd('abb todo // TODO:')
+vim.cmd('abb fx // FIX:')
+vim.cmd('abb hk // HACK:')
+vim.cmd('abb wrn // WARNING:')
+vim.cmd('abb prf // PERFORMANCE:')
+vim.cmd('abb nt // NOTE:')
+vim.cmd('abb tst // TEST:')
