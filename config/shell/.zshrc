@@ -63,7 +63,6 @@ alias vim='nvim'
 alias vi='nvim'
 alias v='nvim'
 alias cl='clear'
-alias update='paru -Syyu'
 alias remove_orphans='pacman -Qtdq | sudo pacman -Rns'
 alias clear_logs='sudo rm -rf /var/log/journal/*'
 alias desk='cd ~/Desktop/'
@@ -97,6 +96,13 @@ alias tree='exa -T'
 alias cat='bat --style=numbers --color=always'
 alias find='fdfind'
 alias r='ranger'
+
+# Loading update alias, based on distro
+if [[ -f /etc/debian_version ]]; then
+    alias update='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt clean && sudo apt autoclean && sudo apt autoremove'
+else
+    alias update='paru -Syyu'
+fi
 
 # devour aliases
 alias mpv="devour mpv"
