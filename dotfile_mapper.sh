@@ -35,15 +35,15 @@ fi
 ln -s "$PWD/config/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
 
 # map alacritty config
-#if [ ! -d "$HOME/.config/alacritty" ]; then
-#    mkdir "$HOME/.config/alacritty"
-#fi
-#
-#if [ -f "$HOME/.config/alacritty/alacritty.yml" ]; then
-#    rm "$HOME/.config/alacritty/alacritty.yml"
-#fi
-#
-#ln -s "$PWD/config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
+if [ ! -d "$HOME/.config/alacritty" ]; then
+    mkdir "$HOME/.config/alacritty"
+fi
+
+if [ -f "$HOME/.config/alacritty/alacritty.yml" ]; then
+    rm "$HOME/.config/alacritty/alacritty.yml"
+fi
+
+ln -s "$PWD/config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
 
 # map gitconfig
 if [ -f "$HOME/.gitconfig" ]; then
