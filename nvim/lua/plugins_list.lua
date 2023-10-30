@@ -104,16 +104,6 @@ return require('packer').startup(function(use)
         end
     }
     use {
-        "folke/noice.nvim",
-        requires = {
-            {"MunifTanjim/nui.nvim"},
-            {"rcarriga/nvim-notify"}
-        },
-        config = function()
-            require("noice").setup {}
-        end
-    }
-    use {
         'ray-x/go.nvim',
         config = function()
             require('go').setup {}
