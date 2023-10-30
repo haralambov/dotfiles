@@ -102,7 +102,7 @@ alias r='ranger'
 if [[ -f /etc/debian_version ]]; then
     alias update='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt clean && sudo apt autoclean && sudo apt autoremove'
 else
-    alias update='paru -Syyu'
+    alias update='yay -Syyu'
 fi
 
 # devour aliases
