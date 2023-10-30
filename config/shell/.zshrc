@@ -7,7 +7,8 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="$PATH:/snap/bin:/usr/local/go/bin"
+export GOBIN="$HOME/go/bin"
+export PATH="$PATH:/snap/bin:/usr/local/go/bin:$GOBIN"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 UPDATE_ZSH_DAYS=14
