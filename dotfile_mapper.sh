@@ -18,11 +18,11 @@ fi
 
 ln -s "$PWD/config/shell/.zshrc" "$HOME/.zshrc"
 
-if [ -f "$HOME/.p10k.zsh" ]; then
-    rm "$HOME/.p10k.zsh"
-fi
-
-ln -s "$PWD/config/shell/.p10k.zsh" "$HOME/.p10k.zsh"
+# if [ -f "$HOME/.p10k.zsh" ]; then
+#     rm "$HOME/.p10k.zsh"
+# fi
+#
+# ln -s "$PWD/config/shell/.p10k.zsh" "$HOME/.p10k.zsh"
 
 # map tmux config
 if [ ! -d "$HOME/.config/tmux" ]; then
