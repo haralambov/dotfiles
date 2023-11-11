@@ -103,11 +103,5 @@ return require('packer').startup(function(use)
             require("todo-comments").setup {}
         end
     }
-    use {
-        'ray-x/go.nvim',
-        config = function()
-            require('go').setup {}
-        end
-    }
     use 'ray-x/guihua.lua'
 end)
