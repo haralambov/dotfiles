@@ -1,0 +1,8 @@
+keybinds {
+    shared_except "locked" {
+        bind "Alt H" { MoveFocusOrTab "Left"; }
+        bind "Alt L" { MoveFocusOrTab "Right"; }
+        bind "Alt J" { MoveFocus "Down"; }
+        bind "Alt K" { MoveFocus "Up"; }
+    }
+}

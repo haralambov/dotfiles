@@ -24,15 +24,25 @@ ln -s "$PWD/config/shell/.zshrc" "$HOME/.zshrc"
 #
 # ln -s "$PWD/config/shell/.p10k.zsh" "$HOME/.p10k.zsh"
 
-# map tmux config
-if [ ! -d "$HOME/.config/tmux" ]; then
-    mkdir "$HOME/.config/tmux"
+## map tmux config
+#if [ ! -d "$HOME/.config/tmux" ]; then
+#    mkdir "$HOME/.config/tmux"
+#fi
+#if [ -f "$HOME/.config/tmux/tmux.conf" ]; then
+#    rm "$HOME/.config/tmux/tmux.conf"
+#fi
+#
+#ln -s "$PWD/config/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
+
+# map zellij config
+if [ ! -d "$HOME/.config/zellij" ]; then
+    mkdir "$HOME/.config/zellij"
 fi
-if [ -f "$HOME/.config/tmux/tmux.conf" ]; then
-    rm "$HOME/.config/tmux/tmux.conf"
+if [ -f "$HOME/.config/zellij/config.kdl" ]; then
+    rm "$HOME/.config/zellij/config.kdl"
 fi
 
-ln -s "$PWD/config/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
+ln -s "$PWD/config/zellij/config.kdl" "$HOME/.config/zellij/config.kdl"
 
 # map alacritty config
 if [ ! -d "$HOME/.config/alacritty" ]; then

@@ -90,6 +90,7 @@ alias tree='exa -T'
 alias cat='bat --style=numbers --color=always'
 alias find='fdfind'
 alias r='ranger'
+alias z='zellij'
 
 # Loading update alias, based on distro
 if [[ -f /etc/debian_version ]]; then
