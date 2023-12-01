@@ -1,9 +1,18 @@
 keybinds {
     shared_except "locked" {
+        // replacing bandings due to overlap with system shortcuts
+        unbind "Alt h"
+        unbind "Alt j"
+        unbind "Alt k"
+        unbind "Alt l"
         bind "Alt H" { MoveFocusOrTab "Left"; }
         bind "Alt L" { MoveFocusOrTab "Right"; }
         bind "Alt J" { MoveFocus "Down"; }
         bind "Alt K" { MoveFocus "Up"; }
+    }
+    normal {
+        unbind "Ctrl h"
+        bind "Alt m" { SwitchToMode "Move"; }
     }
 }
 
