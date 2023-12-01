@@ -6,3 +6,5 @@ keybinds {
         bind "Alt K" { MoveFocus "Up"; }
     }
 }
+
+theme "catppuccin-mocha" // or latte, frappe and macchiato
