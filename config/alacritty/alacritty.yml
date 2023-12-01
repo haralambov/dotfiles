@@ -1,12 +1,16 @@
+import:
+  # uncomment the flavour you want below:
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+
 live_config_reload: true
 
 window:
   opacity: 0.95
   padding:
-    x: 5
-    y: 5
+    x: 10
+    y: 10
   dynamic_padding: false
-  decorations: full
+  decorations: none
   dimensions:
     columns: 120
     lines: 36
