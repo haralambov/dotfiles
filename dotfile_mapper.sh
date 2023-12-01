@@ -93,14 +93,14 @@ fi
 ln -s "$PWD/config/ranger/rc.conf" "$HOME/.config/ranger/rc.conf"
 
 # map conky config
-if [ ! -d "$HOME/.config/conky" ]; then
-    mkdir "$HOME/.config/conky"
-fi
-
-if [ -f "$HOME/.config/conky/conky.conf" ]; then
-    rm "$HOME/.config/conky/conky.conf"
-fi
-ln -s "$PWD/config/conky/conky.conf" "$HOME/.config/conky/conky.conf"
+#if [ ! -d "$HOME/.config/conky" ]; then
+#    mkdir "$HOME/.config/conky"
+#fi
+#
+#if [ -f "$HOME/.config/conky/conky.conf" ]; then
+#    rm "$HOME/.config/conky/conky.conf"
+#fi
+#ln -s "$PWD/config/conky/conky.conf" "$HOME/.config/conky/conky.conf"
 
 # maps touchpad config, that enables tap to click
 if [ -f "/etc/X11/xorg.conf.d/40-libinput.conf" ]; then
