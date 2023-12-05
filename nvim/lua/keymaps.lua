@@ -1,6 +1,10 @@
 -- Double 'j' to switch to normal mode
 vim.keymap.set('i', 'jj', '<ESC>')
 
+-- nvim-cmp seems to be overwriting the built-in
+-- word completion, so this remaps it before it's overwritten
+vim.keymap.set('i', '<C-Space>', '<C-n>')
+
 -- Make Shift+Tab decrease indent
 vim.keymap.set('i', '<S-Tab>', '<C-d>')
 
