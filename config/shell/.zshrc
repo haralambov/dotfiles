@@ -91,6 +91,7 @@ alias cat='bat --style=numbers --color=always'
 alias find='fdfind'
 alias r='ranger'
 alias z='zellij'
+alias zs='~/Projects/dotfiles/scripts/zs.sh'
 
 # Loading update alias, based on distro
 if [[ -f /etc/debian_version ]]; then
