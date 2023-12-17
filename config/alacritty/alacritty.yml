@@ -12,8 +12,8 @@ window:
   dynamic_padding: false
   decorations: none
   dimensions:
-    columns: 120
-    lines: 36
+    columns: 80
+    lines: 24
 
 font:
   normal:
