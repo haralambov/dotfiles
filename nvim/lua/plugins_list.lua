@@ -3,7 +3,6 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
-    -- use { "ellisonleao/gruvbox.nvim" }
     use { "catppuccin/nvim", as = "catppuccin" }
 
     use {
@@ -104,4 +103,10 @@ return require('packer').startup(function(use)
         end
     }
     use 'ray-x/guihua.lua'
+
+    -- Debugger plugins
+    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" }}
+    use 'theHamsta/nvim-dap-virtual-text'
+    use 'leoluz/nvim-dap-go'
+
 end)
