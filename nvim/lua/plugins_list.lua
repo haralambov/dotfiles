@@ -20,7 +20,6 @@ return require('packer').startup(function(use)
     }
 
     use 'ThePrimeagen/harpoon'
-    use 'mbbill/undotree'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-commentary'
     use 'tpope/vim-surround'
@@ -49,10 +48,6 @@ return require('packer').startup(function(use)
 
     use 'nvim-tree/nvim-web-devicons'
     use 'nvim-tree/nvim-tree.lua'
-    use {'romgrk/barbar.nvim', requires = {
-        'lewis6991/gitsigns.nvim',
-        'nvim-tree/nvim-web-devicons',
-    }}
     use {
       'nvim-lualine/lualine.nvim',
       requires = { 'nvim-tree/nvim-web-devicons', opt = true }
@@ -62,25 +57,7 @@ return require('packer').startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
     use 'romainl/vim-cool'
-    use({
-        "utilyre/barbecue.nvim",
-        tag = "*",
-        requires = {
-            "SmiteshP/nvim-navic",
-            "nvim-tree/nvim-web-devicons", -- optional dependency
-        },
-        after = "nvim-web-devicons", -- keep this if you're using NvChad
-        config = function()
-            require("barbecue").setup()
-        end,
-    })
-    use {
-        'goolord/alpha-nvim',
-        config = function ()
-            require'alpha'.setup(require'alpha.themes.dashboard'.config)
-        end
-    }
-    use "lukas-reineke/indent-blankline.nvim"
+
     use {
         'ggandor/leap.nvim',
         config = function() require('leap').add_default_mappings() end
@@ -93,20 +70,9 @@ return require('packer').startup(function(use)
             }
         end
     }
-    use "folke/trouble.nvim"
-    use "folke/zen-mode.nvim"
-    use {
-        "folke/todo-comments.nvim",
-        requires = "nvim-lua/plenary.nvim",
-        config = function()
-            require("todo-comments").setup {}
-        end
-    }
-    use 'ray-x/guihua.lua'
 
     -- Debugger plugins
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" }}
     use 'theHamsta/nvim-dap-virtual-text'
     use 'leoluz/nvim-dap-go'
-
 end)
