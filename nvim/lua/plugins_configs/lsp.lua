@@ -40,6 +40,7 @@ local cmp_select = {behavior = cmp.SelectBehavior.Select}
 cmp.setup({
     sources = {
         {name = 'path'},
+        {name = 'buffer'},
         {name = 'nvim_lsp'},
         {name = 'nvim_lua'},
     },
@@ -48,6 +49,11 @@ cmp.setup({
         ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
         ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+
+        ['<S-TAB>'] = cmp.mapping.select_prev_item(cmp_select),
+        ['<TAB>'] = cmp.mapping.select_next_item(cmp_select),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+
         ['<C-Space>'] = cmp.mapping.complete(),
     }),
 })
