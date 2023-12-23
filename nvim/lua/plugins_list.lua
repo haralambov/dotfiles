@@ -14,35 +14,36 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = function()
             local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-
             ts_update()
         end,
     }
 
-    use 'ThePrimeagen/harpoon'
+    use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
+    use {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        requires = { {"nvim-lua/plenary.nvim"} }
+    }
     use 'tpope/vim-fugitive'
     use 'tpope/vim-commentary'
     use 'tpope/vim-surround'
-    use 'lewis6991/gitsigns.nvim'
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function() require("gitsigns").setup() end
+    }
 
     use {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
+        branch = 'v3.x',
         requires = {
+            {'williamboman/mason.nvim'},
+            {'williamboman/mason-lspconfig.nvim'},
             -- LSP Support
-            {'neovim/nvim-lspconfig'},             -- Required
-            {                                      -- Optional
-                'williamboman/mason.nvim',
-                run = function()
-                    pcall(vim.cmd, 'MasonUpdate')
-                end,
-            },
-            {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
+            {'neovim/nvim-lspconfig'},
             -- Autocompletion
-            {'hrsh7th/nvim-cmp'},     -- Required
-            {'hrsh7th/cmp-nvim-lsp'}, -- Required
-            {'L3MON4D3/LuaSnip'},     -- Required
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'L3MON4D3/LuaSnip'},
         }
     }
 
@@ -58,10 +59,6 @@ return require('packer').startup(function(use)
     }
     use 'romainl/vim-cool'
 
-    use {
-        'ggandor/leap.nvim',
-        config = function() require('leap').add_default_mappings() end
-    }
     use {
         'rmagatti/goto-preview',
         config = function()
