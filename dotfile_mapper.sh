@@ -49,11 +49,11 @@ if [ ! -d "$HOME/.config/alacritty" ]; then
     mkdir "$HOME/.config/alacritty"
 fi
 
-if [ -f "$HOME/.config/alacritty/alacritty.yml" ]; then
-    rm "$HOME/.config/alacritty/alacritty.yml"
+if [ -f "$HOME/.config/alacritty/alacritty.toml" ]; then
+    rm "$HOME/.config/alacritty/alacritty.toml"
 fi
 
-ln -s "$PWD/config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
+ln -s "$PWD/config/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
 
 # map gitconfig
 if [ -f "$HOME/.gitconfig" ]; then
