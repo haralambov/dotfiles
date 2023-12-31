@@ -27,11 +27,7 @@ return require('packer').startup(function(use)
     use 'tpope/vim-fugitive'
     use 'tpope/vim-commentary'
     use 'tpope/vim-surround'
-    use {
-        'lewis6991/gitsigns.nvim',
-        config = function() require("gitsigns").setup() end
-    }
-
+    use 'lewis6991/gitsigns.nvim'
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
