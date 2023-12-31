@@ -17,3 +17,13 @@ if [ -f "$HOME/.zshrc" ]; then
 fi
 
 ln -s "$PWD/config/shell/.zshrc" "$HOME/.zshrc"
+
+# map tmux config
+if [ ! -d "$HOME/.config/tmux" ]; then
+    mkdir "$HOME/.config/tmux"
+fi
+if [ -f "$HOME/.config/tmux/tmux.conf" ]; then
+    rm "$HOME/.config/tmux/tmux.conf"
+fi
+
+ln -s "$PWD/config/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
