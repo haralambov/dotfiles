@@ -11,10 +11,10 @@ PROMPT_EOL_MARK=''
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 plugins=(
+    z
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
-    web-search
     ohmyzsh-full-autoupdate
 )
 
@@ -89,9 +89,6 @@ alias ff='~/Projects/dotfiles/scripts/ff.sh'
 alias tree='exa -T'
 alias cat='bat --style=numbers --color=always'
 alias find='fdfind'
-alias r='ranger'
-alias z='zellij'
-alias zs='~/Projects/dotfiles/scripts/zs.sh'
 
 # Loading update alias, based on distro
 if [[ -f /etc/debian_version ]]; then
@@ -99,12 +96,6 @@ if [[ -f /etc/debian_version ]]; then
 else
     alias update='yay -Syyu'
 fi
-
-# devour aliases
-alias mpv="devour mpv"
-alias zathura="devour zathura"
-alias feh="devour feh"
-
 
 #########
 # vi mode
