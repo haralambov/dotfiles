@@ -89,6 +89,12 @@ alias ff='~/Projects/dotfiles/scripts/ff.sh'
 alias tree='exa -T'
 alias cat='bat --style=numbers --color=always'
 alias find='fdfind'
+alias r='ranger'
+
+# devour aliases
+alias mpv="devour mpv"
+alias zathura="devour zathura"
+alias feh="devour feh"
 
 # Loading update alias, based on distro
 if [[ -f /etc/debian_version ]]; then

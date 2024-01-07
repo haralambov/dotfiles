@@ -27,3 +27,43 @@ if [ -f "$HOME/.config/tmux/tmux.conf" ]; then
 fi
 
 ln -s "$PWD/config/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
+
+# map i3 config
+if [ ! -d "$HOME/.config/i3" ]; then
+    mkdir "$HOME/.config/i3"
+fi
+if [ -f "$HOME/.config/i3/config" ]; then
+    rm "$HOME/.config/i3/config"
+fi
+
+ln -s "$PWD/config/i3/config" "$HOME/.config/i3/config"
+
+# map picom config
+if [ ! -d "$HOME/.config/picom" ]; then
+    mkdir "$HOME/.config/picom"
+fi
+if [ -f "$HOME/.config/picom/picom.conf" ]; then
+    rm "$HOME/.config/picom/picom.conf"
+fi
+
+ln -s "$PWD/config/picom/picom.conf" "$HOME/.config/picom/picom.conf"
+
+# map alacritty config
+if [ ! -d "$HOME/.config/alacritty" ]; then
+    mkdir "$HOME/.config/alacritty"
+fi
+if [ -f "$HOME/.config/alacritty/alacritty.toml" ]; then
+    rm "$HOME/.config/alacritty/alacritty.toml"
+fi
+
+ln -s "$PWD/config/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
+
+# map ranger config
+if [ ! -d "$HOME/.config/ranger" ]; then
+    mkdir "$HOME/.config/ranger"
+fi
+if [ -f "$HOME/.config/ranger/rc.conf" ]; then
+    rm "$HOME/.config/ranger/rc.conf"
+fi
+
+ln -s "$PWD/config/ranger/rc.conf" "$HOME/.config/ranger/rc.conf"

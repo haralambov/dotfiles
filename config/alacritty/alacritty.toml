@@ -10,7 +10,7 @@ family = "UbuntuMono Nerd Font Mono"
 style = "Regular"
 
 [window]
-decorations = "none"
+decorations = "full"
 dynamic_padding = false
 opacity = 0.95
 

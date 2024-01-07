@@ -4,7 +4,7 @@
 CURRENT_LANGUAGE=$(setxkbmap -query | grep -i layout | awk '{print $2}' | cut -d\, -f1)
 if [[ $CURRENT_LANGUAGE != "us" ]]
 then
-    setxkbmap -layout us,bg -variant ,phonetic;
+    ~/Projects/dotfiles/scripts/keyboard.sh
 fi
 
 IMAGE=/tmp/i3lock.png
