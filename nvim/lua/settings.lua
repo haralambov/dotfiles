@@ -1,6 +1,4 @@
 vim.g.mapleader = ' '
-vim.o.background = "dark"
-vim.cmd.colorscheme "catppuccin-mocha"
 
 vim.opt.path = vim.opt.path + '**'
 vim.opt.hidden = true
