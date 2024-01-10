@@ -68,4 +68,10 @@ return require('packer').startup(function(use)
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" }}
     use 'theHamsta/nvim-dap-virtual-text'
     use 'leoluz/nvim-dap-go'
+
+    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+        require("toggleterm").setup({
+            open_mapping = [[<leader><CR>]]
+        })
+    end}
 end)
