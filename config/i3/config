@@ -186,8 +186,6 @@ bindsym $mod+Tab workspace back_and_forth
 
 default_border pixel 2
 default_floating_border pixel 2
-smart_borders on
-smart_gaps inverse_outer
 
 set $gaps_change 5
 set $default_inner_gaps 5
