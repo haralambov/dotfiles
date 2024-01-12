@@ -70,4 +70,5 @@ return require('packer').startup(function(use)
     use 'leoluz/nvim-dap-go'
 
     use {"akinsho/toggleterm.nvim", tag = '*'}
+    use { "joerdav/templ.vim" }
 end)
