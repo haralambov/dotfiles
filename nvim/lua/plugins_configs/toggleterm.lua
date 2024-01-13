@@ -3,5 +3,5 @@ require("toggleterm").setup({
 })
 
 --  Mapping for toggling the terminal
-vim.keymap.set('n', '<leader><CR>', [[<Cmd>ToggleTerm<CR>]])
-vim.keymap.set('t', '<leader><CR>', [[<Cmd>ToggleTerm<CR>]])
+vim.keymap.set('n', '<C-t>', [[<Cmd>ToggleTerm<CR>]])
+vim.keymap.set('t', '<C-t>', [[<Cmd>ToggleTerm<CR>]])
