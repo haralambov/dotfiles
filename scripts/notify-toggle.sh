@@ -7,4 +7,4 @@ if [ "$IS_PAUSED" = "true" ]; then
     ICON=""
 fi
 
-echo "$ICON"
+echo "$ICON "
