@@ -3,7 +3,7 @@ import = ["~/.config/alacritty/catppuccin/catppuccin-mocha.toml"]
 live_config_reload = true
 
 [font]
-size = 14
+size = 12
 
 [font.normal]
 family = "UbuntuMono Nerd Font Mono"
