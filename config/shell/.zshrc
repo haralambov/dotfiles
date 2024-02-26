@@ -95,7 +95,7 @@ alias find='fdfind'
 alias r='ranger'
 
 # devour aliases
-alias mpv="devour mpv --geometry=1024x768"
+alias mpv="devour mpv --geometry=1024x768 --sub-auto=all"
 alias zathura="devour zathura"
 alias feh="devour feh"
 
