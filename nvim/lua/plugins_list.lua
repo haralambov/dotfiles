@@ -66,6 +66,7 @@ return require('packer').startup(function(use)
 
     -- Debugger plugins
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" }}
+    use { "nvim-neotest/nvim-nio" }
     use 'theHamsta/nvim-dap-virtual-text'
     use 'leoluz/nvim-dap-go'
 
