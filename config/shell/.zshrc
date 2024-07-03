@@ -35,7 +35,7 @@ fi
 
 function mfa() {
     CODE=$(oathtool -b --totp $1)
-    echo $CODE | tee /dev/tty | xclip -sel clip
+    echo $CODE | tee /dev/tty | tr -d '\n' | xclip -sel clip -i
 }
 
 alias myip="curl http://ipecho.net/plain; echo"
