@@ -2,6 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 export GOBIN="$HOME/go/bin"
 export PATH="$PATH:/snap/bin:/usr/local/go/bin:$GOBIN"
+export PAGER=""
 
 ZSH_THEME="robbyrussell"
 UPDATE_ZSH_DAYS=14
