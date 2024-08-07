@@ -1,7 +1,7 @@
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
-    local opts = {buffer = bufnr, remap = false}
+    local opts = { buffer = bufnr, remap = false }
 
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
@@ -32,18 +32,31 @@ require('mason-lspconfig').setup({
             local lua_opts = lsp_zero.nvim_lua_ls()
             require('lspconfig').lua_ls.setup(lua_opts)
         end,
+        volar = function()
+            require('lspconfig').volar.setup {
+                on_attach = lsp_zero.on_attach,
+                capabilities = lsp_zero.capabilities,
+                filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+                init_options = {
+                    vue = {
+                        hybridMode = false,
+                    },
+                },
+
+            }
+        end
     }
 })
 
 local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 cmp.setup({
     sources = {
-        {name = 'path'},
-        {name = 'buffer'},
-        {name = 'nvim_lsp'},
-        {name = 'nvim_lua'},
+        { name = 'path' },
+        { name = 'buffer' },
+        { name = 'nvim_lsp' },
+        { name = 'nvim_lua' },
     },
     formatting = lsp_zero.cmp_format(),
     mapping = cmp.mapping.preset.insert({
