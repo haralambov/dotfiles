@@ -25,6 +25,11 @@ command=~/Projects/dotfiles/scripts/notify-toggle.sh
 interval=once
 signal=11
 
+[packages]
+label=  
+command=yay -Qu | wc -l
+interval=3600
+
 [time]
 command=date '+%H:%M %P'
 interval=60
