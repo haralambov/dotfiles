@@ -1,11 +1,6 @@
 #!/bin/bash
-
-$(yay -Syy > /dev/null)
-PACKAGES_LIST=$(yay -Qu)
-
-if [ -z "${PACKAGES_LIST}" ]; then
-    echo 0
-    exit
+if [ -f /var/lib/pacman/db.lck ]; then
+    echo "n/a"
+else
+    echo $(yay -Syy > /dev/null && yay -Qu | wc -l)
 fi
-
-echo $(echo ${PACKAGES_LIST} | wc -l)
