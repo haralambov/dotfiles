@@ -77,3 +77,18 @@ if [ -f "$HOME/.config/dunst/dunstrc" ]; then
 fi
 
 ln -s "$PWD/config/dunst/dunstrc" "$HOME/.config/dunst/dunstrc"
+
+# map bat config
+if [ ! -d "$HOME/.config/bat/themes" ]; then
+    mkdir -p "$HOME/.config/bat/themes"
+fi
+if [ -f "$HOME/.config/bat/config" ]; then
+    rm "$HOME/.config/bat/config"
+fi
+if [ -f "$HOME/.config/bat/themes/CatppuccinMocha.tmTheme" ]; then
+    rm "$HOME/.config/bat/themes/CatppuccinMocha.tmTheme"
+fi
+
+ln -s "$PWD/config/bat/config" "$HOME/.config/bat/config"
+ln -s "$PWD/config/bat/themes/CatppuccinMocha.tmTheme" "$HOME/.config/bat/themes/CatppuccinMocha.tmTheme"
+$(bat cache --build > /dev/null)
