@@ -67,3 +67,13 @@ if [ -f "$HOME/.config/ranger/rc.conf" ]; then
 fi
 
 ln -s "$PWD/config/ranger/rc.conf" "$HOME/.config/ranger/rc.conf"
+
+# map dunst config
+if [ ! -d "$HOME/.config/dunst" ]; then
+    mkdir "$HOME/.config/dunst"
+fi
+if [ -f "$HOME/.config/dunst/dunstrc" ]; then
+    rm "$HOME/.config/dunst/dunstrc"
+fi
+
+ln -s "$PWD/config/dunst/dunstrc" "$HOME/.config/dunst/dunstrc"
