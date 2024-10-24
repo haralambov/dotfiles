@@ -185,3 +185,5 @@ function wifi_connect() {
 function wifi_disconnect() {
     nmcli con down $1
 }
+
+eval "$(fzf --zsh)"
