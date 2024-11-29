@@ -4,7 +4,7 @@ size = 12
 
 [font.normal]
 family = "UbuntuMono Nerd Font Mono"
-style = "Regular"
+style = "Italic"
 
 [window]
 decorations = "full"
