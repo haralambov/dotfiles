@@ -11,6 +11,11 @@ command=~/Projects/dotfiles/scripts/volume.sh
 interval=once
 signal=10
 
+[brightness]
+command=~/Projects/dotfiles/scripts/brightness.sh
+interval=once
+signal=12
+
 [temp]
 label= 
 command=sensors | grep -i core\ 0 | awk '{print $3}'
