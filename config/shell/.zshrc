@@ -101,11 +101,6 @@ alias cat='bat --theme=OneHalfDark --style=numbers --color=always'
 alias find='fdfind'
 alias r='ranger'
 
-# devour aliases
-alias mpv="devour mpv --geometry=1024x768 --sub-auto=all"
-alias zathura="devour zathura"
-alias feh="devour feh"
-
 # Loading update alias, based on distro
 if [[ -f /etc/debian_version ]]; then
     alias update='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt clean && sudo apt autoclean && sudo apt autoremove'
