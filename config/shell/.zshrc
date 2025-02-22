@@ -100,7 +100,7 @@ alias tree='exa -T'
 alias cat='bat --theme=OneHalfDark --style=numbers --color=always'
 alias find='fdfind'
 alias r='ranger'
-alias ff='fastfetch'
+alias fh='fastfetch'
 
 # Loading update alias, based on distro
 if [[ -f /etc/debian_version ]]; then
