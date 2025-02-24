@@ -1,4 +1,7 @@
-local tree_width = 35
+-- set tree size to be 30% of the neovim window
+local win_id = vim.api.nvim_get_current_win()
+local window_width = vim.api.nvim_win_get_width(win_id)
+local tree_width = math.floor(window_width * 0.3)
 
 function ToggleNvimTree()
     local view = require("nvim-tree.view")
