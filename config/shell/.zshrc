@@ -98,7 +98,7 @@ alias \g='google'
 alias ff='~/Projects/dotfiles/scripts/ff.sh'
 alias tree='exa -T'
 alias cat='bat --theme=OneHalfDark --style=numbers --color=always'
-alias find='fdfind'
+alias find='fd'
 alias r='ranger'
 alias fh='fastfetch'
 
