@@ -41,7 +41,7 @@ bindsym $mod+n exec --no-startup-id dunstctl set-paused toggle && pkill -RTMIN+1
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run -fn "UbuntuMono Nerd Font:size=12"
 
 # change focus
 bindsym $mod+h focus left
@@ -142,7 +142,7 @@ bindsym $mod+Shift+Return [class="scratchpad"] scratchpad show; [class="scratchp
 
 bindsym $mod+b exec --no-startup-id $BROWSER
 bindsym $mod+Shift+f exec --no-startup-id alacritty -e ranger
-bindsym $mod+Shift+v exec --no-startup-id clipmenu -i -l 20
+bindsym $mod+Shift+v exec --no-startup-id clipmenu -i -l 20 -fn "UbuntuMono Nerd Font:size=12"
 
 set $lock_command ~/Projects/dotfiles/scripts/locker
 # exec --no-startup-id xautolock -time 5 -corners ---- -locker $lock_command
