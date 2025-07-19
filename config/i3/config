@@ -143,6 +143,7 @@ bindsym $mod+Shift+Return [class="scratchpad"] scratchpad show; [class="scratchp
 bindsym $mod+b exec --no-startup-id $BROWSER
 bindsym $mod+Shift+f exec --no-startup-id alacritty -e ranger
 bindsym $mod+Shift+v exec --no-startup-id clipmenu -i -l 20 -fn "UbuntuMono Nerd Font:size=12"
+bindsym $mod+p exec --no-startup-id ~/Projects/dotfiles/scripts/screenshot.sh
 
 set $lock_command ~/Projects/dotfiles/scripts/locker
 # exec --no-startup-id xautolock -time 5 -corners ---- -locker $lock_command
