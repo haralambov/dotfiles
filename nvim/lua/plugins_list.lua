@@ -3,7 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
-    use { "rose-pine/neovim", as = "rose-pine" }
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     use {
         'nvim-telescope/telescope.nvim', branch = '0.1.x',
