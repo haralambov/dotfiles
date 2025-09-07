@@ -1,9 +1,9 @@
 
 [font]
-size = 12
+size = 10
 
 [font.normal]
-family = "UbuntuMono Nerd Font Mono"
+family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [window]
@@ -20,5 +20,8 @@ x = 5
 y = 5
 
 [general]
+import = [
+   "~/.config/alacritty/catppuccin-mocha.toml"
+]
 
 live_config_reload = true

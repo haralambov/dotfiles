@@ -55,8 +55,12 @@ fi
 if [ -f "$HOME/.config/alacritty/alacritty.toml" ]; then
     rm "$HOME/.config/alacritty/alacritty.toml"
 fi
+if [ -f "$HOME/.config/alacritty/catppuccin-mocha.toml" ]; then
+    rm "$HOME/.config/alacritty/catppuccin-mocha.toml"
+fi
 
 ln -s "$PWD/config/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
+ln -s "$PWD/config/alacritty/catppuccin-mocha.toml" "$HOME/.config/alacritty/catppuccin-mocha.toml"
 
 # map ranger config
 if [ ! -d "$HOME/.config/ranger" ]; then
