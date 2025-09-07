@@ -36,5 +36,5 @@ command=~/Projects/dotfiles/scripts/update.sh
 interval=3600
 
 [time]
-command=date '+%H:%M %P'
+command=date '+%a %d %b %H:%M'
 interval=60
