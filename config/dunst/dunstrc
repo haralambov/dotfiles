@@ -1,5 +1,5 @@
 [global]
-font = UbuntuMono Nerd Font 14
+font = JetBrainsMono Nerd Font 10
 frame_color = "#89b4fa"
 separator_color= frame
 
