@@ -3,7 +3,6 @@ export ZSH="$HOME/.oh-my-zsh"
 export GOBIN="$HOME/go/bin"
 export PATH="$PATH:/snap/bin:/usr/local/go/bin:$GOBIN"
 export PAGER=""
-export BROWSER="brave"
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
@@ -98,16 +97,19 @@ alias fix_keyboard="~/Projects/dotfiles/scripts/keyboard.sh"
 alias \g='google'
 alias ff='~/Projects/dotfiles/scripts/ff.sh'
 alias tree='eza -T'
-alias cat='bat --theme=OneHalfDark --style=numbers --color=always'
 alias find='fd'
 alias r='ranger'
 alias fh='fastfetch'
 
 # Loading update alias, based on distro
 if [[ -f /etc/debian_version ]]; then
+    export BROWSER="brave-browser"
     alias update='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt clean && sudo apt autoclean && sudo apt autoremove'
+    alias cat='batcat --theme=OneHalfDark --style=numbers --color=always'
 else
+    export BROWSER="brave"
     alias update='yay -Syyu'
+    alias cat='bat --theme=OneHalfDark --style=numbers --color=always'
 fi
 
 #########
