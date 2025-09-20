@@ -104,7 +104,7 @@ alias fh='fastfetch'
 # Loading update alias, based on distro
 if [[ -f /etc/debian_version ]]; then
     export BROWSER="brave-browser"
-    alias update='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt clean && sudo apt autoclean && sudo apt autoremove'
+    alias update='sudo apt-get update && sudo apt-get full-upgrade && sudo apt-get autoremove --purge'
     alias cat='batcat --theme=OneHalfDark --style=numbers --color=always'
 else
     export BROWSER="brave"
