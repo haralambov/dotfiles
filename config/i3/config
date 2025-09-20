@@ -47,7 +47,7 @@ bindsym $mod+n exec --no-startup-id dunstctl set-paused toggle && pkill -RTMIN+1
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -fn "JetBrainsMono Nerd Font Bold:size=12"
+bindsym $mod+d exec --no-startup-id dmenu_run -l 20 -fn "JetBrainsMono Nerd Font Bold:size=12"
 
 # change focus
 bindsym $mod+h focus left
