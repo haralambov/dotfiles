@@ -1,5 +1,6 @@
 #!/bin/bash
 if [[ -f /etc/debian_version ]]; then
+    sudo apt-get update -qq > /dev/null
     echo $(apt list --upgradeable 2>/dev/null | tail -n +2 | wc -l)
 else
     if [ -f /var/lib/pacman/db.lck ]; then
