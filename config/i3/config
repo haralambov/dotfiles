@@ -146,7 +146,7 @@ exec --no-startup-id alacritty --class scratchpad
 
 bindsym $mod+Shift+Return [class="scratchpad"] scratchpad show; [class="scratchpad"] move position center
 
-bindsym $mod+b exec --no-startup-id $BROWSER
+bindsym $mod+b exec --no-startup-id brave || brave-browser
 bindsym $mod+Shift+f exec --no-startup-id alacritty -e ranger
 bindsym $mod+Shift+v exec --no-startup-id clipmenu -i -l 20 -fn "UbuntuMono Nerd Font:size=12"
 bindsym $mod+p exec --no-startup-id ~/Projects/dotfiles/scripts/screenshot.sh
