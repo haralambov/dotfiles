@@ -82,7 +82,6 @@ alias todos='cd ~/Documents/notes && vim todos'
 alias slp='sudo systemctl suspend'
 alias less='less -S'
 alias up='uptime -p'
-alias cal='cal -m'
 alias gs='git status'
 alias gd='git diff'
 alias gds='git diff --staged'
@@ -102,10 +101,12 @@ if [[ -f /etc/debian_version ]]; then
     export BROWSER="brave-browser"
     alias update='sudo apt-get update && sudo apt-get full-upgrade && sudo apt-get autoremove --purge && pkill -RTMIN+13 i3blocks'
     alias cat='batcat --theme=OneHalfDark --style=numbers --color=always'
+    alias cal='ncal -bM'
 else
     export BROWSER="brave"
     alias update='yay -Syyu && pkill -RTMIN+13 i3blocks'
     alias cat='bat --theme=OneHalfDark --style=numbers --color=always'
+    alias cal='cal -m'
 fi
 
 #########
