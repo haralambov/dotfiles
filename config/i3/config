@@ -38,7 +38,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id ~/Projects/dotfiles/scripts/keyboard.sh
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+Return exec --no-startup-id st
 
 # toggle notifications
 bindsym $mod+n exec --no-startup-id dunstctl set-paused toggle && pkill -RTMIN+11 i3blocks
@@ -142,12 +142,12 @@ for_window [class="scratchpad"] floating enable
 for_window [class="scratchpad"] resize set 1024 768
 for_window [class="scratchpad"] move scratchpad
 for_window [class="scratchpad"] border pixel 5
-exec --no-startup-id alacritty --class scratchpad
+exec --no-startup-id st -c scratchpad
 
 bindsym $mod+Shift+Return [class="scratchpad"] scratchpad show; [class="scratchpad"] move position center
 
 bindsym $mod+b exec --no-startup-id brave || brave-browser
-bindsym $mod+Shift+f exec --no-startup-id alacritty -e ranger
+bindsym $mod+Shift+f exec --no-startup-id st -e ranger
 bindsym $mod+Shift+v exec --no-startup-id clipmenu -i -l 20 -fn "UbuntuMono Nerd Font:size=12"
 bindsym $mod+p exec --no-startup-id ~/Projects/dotfiles/scripts/screenshot.sh
 
