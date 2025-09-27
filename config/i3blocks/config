@@ -33,6 +33,7 @@ signal=11
 [packages]
 label=  
 command=~/Projects/dotfiles/scripts/update.sh
+signal=13
 interval=3600
 
 [time]

@@ -100,11 +100,11 @@ alias mfa='~/Projects/dotfiles/scripts/mfa.sh'
 # Loading update alias, based on distro
 if [[ -f /etc/debian_version ]]; then
     export BROWSER="brave-browser"
-    alias update='sudo apt-get update && sudo apt-get full-upgrade && sudo apt-get autoremove --purge'
+    alias update='sudo apt-get update && sudo apt-get full-upgrade && sudo apt-get autoremove --purge && pkill -RTMIN+13 i3blocks'
     alias cat='batcat --theme=OneHalfDark --style=numbers --color=always'
 else
     export BROWSER="brave"
-    alias update='yay -Syyu'
+    alias update='yay -Syyu && pkill -RTMIN+13 i3blocks'
     alias cat='bat --theme=OneHalfDark --style=numbers --color=always'
 fi
 
