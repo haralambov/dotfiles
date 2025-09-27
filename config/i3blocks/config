@@ -17,8 +17,8 @@ interval=once
 signal=12
 
 [temp]
-label= 
-command=sensors | grep -i core\ 0 | awk '{print $3}'
+label=
+command=~/Projects/dotfiles/scripts/temp.sh
 interval=2
 
 [battery]
