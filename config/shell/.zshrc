@@ -40,11 +40,6 @@ if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
     startx
 fi
 
-function mfa() {
-    CODE=$(oathtool -b --totp $1)
-    echo $CODE | tee /dev/tty | tr -d '\n' | xclip -sel clip -i
-}
-
 alias myip="curl http://ipecho.net/plain; echo"
 alias grep='grep --color=auto'
 alias py='python'
@@ -100,6 +95,7 @@ alias tree='eza -T'
 alias find='fd'
 alias r='ranger'
 alias fh='fastfetch'
+alias mfa='~/Projects/dotfiles/scripts/mfa.sh'
 
 # Loading update alias, based on distro
 if [[ -f /etc/debian_version ]]; then

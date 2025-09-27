@@ -1,33 +1,27 @@
 #!/usr/bin/env bash
-
 shopt -s nullglob globstar
 
-typeit=0
-if [[ $1 == "--type" ]]; then
-	typeit=1
-	shift
-fi
-
-otp=""
-if [[ $1 == "--otp" ]]; then
-    otp="otp"
-    shift
-fi
-
 prefix=${PASSWORD_STORE_DIR-~/.password-store}
-password_files=( "$prefix"/**/*.gpg )
-password_files=( "${password_files[@]#"$prefix"/}" )
-password_files=( "${password_files[@]%.gpg}" )
 
-password=$(printf '%s\n' "${password_files[@]}" | dmenu -h 29 -c -i -l 10 -bw 3 -fn "UbuntuMono Nerd Font Mono:size=12" -nb "#222222" -nf "#bbbbbb" -sb "#005577" -sf "#eeeeee" "$@")
+# build relative entry list
+mapfile -t files < <(cd "$prefix" && printf '%s\n' **/*.gpg)
+for i in "${!files[@]}"; do
+    files[$i]=${files[$i]%.gpg}
+done
 
-[[ -n $password ]] || exit
+choice=$(printf '%s\n' "${files[@]}" | dmenu -i -l 20 -fn "JetBrainsMono Nerd Font Bold:size=11" -p "pass:" "$@")
+[[ -n $choice ]] || exit
 
-gpg_cache=$(gpg-connect-agent 'keyinfo --list' /bye 2>/dev/null | awk 'BEGIN{CACHED=0} /^S/ {if($7==1){CACHED=1}}   END{if($0!=""){print CACHED} else {print "none"}}')
+if [[ "$choice" == */otp ]]; then
+    ~/Projects/dotfiles/scripts/mfa.sh "$(pass show "$choice")"
+    notify-send "pass" "Copied $choice to clipboard"
+    exit
+fi
 
-if [[ $gpg_cache == 1 ]]; then
-    pass $otp show -c "$password" > /dev/null
+# try to copy silently; if it fails, open st so user can interact
+if pass show -c "$choice" >/dev/null 2>&1; then
+    notify-send "pass" "Copied $choice to clipboard"
 else
-    st -e pass $otp show -c "$password" > /dev/null
+    st -e pass show -c "$choice"
 fi
 
