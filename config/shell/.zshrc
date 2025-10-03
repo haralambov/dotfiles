@@ -42,7 +42,6 @@ fi
 
 alias myip="curl http://ipecho.net/plain; echo"
 alias grep='grep --color=auto'
-alias py='python'
 alias src='source ~/.zshrc'
 alias ft='grep -RinH --exclude-dir=.git --exclude=tags '
 alias ls='eza --color=always --icons'
@@ -154,6 +153,16 @@ bindkey -M viins '^F' history-incremental-pattern-search-forward
 
 # zsh-autosuggestion accept
 bindkey '^E' autosuggest-accept
+
+# Start an interactive python shell
+# based on which version is installed
+function py() {
+  if command -v python >/dev/null 2>&1; then
+    python "$@"
+  else
+    python3 "$@"
+  fi
+}
 
 function wifi_status() {
     STATUS=$(nmcli radio wifi)
