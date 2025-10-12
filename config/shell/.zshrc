@@ -94,6 +94,7 @@ alias find='fd'
 alias r='ranger'
 alias fh='fastfetch'
 alias mfa='~/Projects/dotfiles/scripts/mfa.sh'
+alias p='~/Projects/dotfiles/scripts/pass'
 
 # Loading update alias, based on distro
 if [[ -f /etc/debian_version ]]; then

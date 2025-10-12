@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+shopt -s nullglob globstar
+
+PREFIX=${PASSWORD_STORE_DIR-~/.password-store}
+CHOICE=$(
+  fd --type f --full-path '' "$PREFIX" \
+    | sed "s|$PREFIX/||; s/\.gpg$//" \
+    | sort -r \
+    | fzf
+)
+[[ -n $CHOICE ]] || exit
+
+if [[ "$CHOICE" == */otp ]]; then
+    ~/Projects/dotfiles/scripts/mfa.sh "$(pass show "$CHOICE")"
+    notify-send "pass" "Copied $CHOICE to clipboard"
+    exit 0
+fi
+
+# try to copy silently; if it fails, open st so user can interact
+#if pass -c "$CHOICE" > /dev/null 2&>1; then
+if pass show "$CHOICE" | ~/Projects/dotfiles/scripts/copy.sh -; then
+    notify-send "pass" "Copied $CHOICE to clipboard"
+fi
+exit 0
