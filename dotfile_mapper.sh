@@ -81,3 +81,13 @@ if [ -f "$HOME/.config/dunst/dunstrc" ]; then
 fi
 
 ln -s "$PWD/config/dunst/dunstrc" "$HOME/.config/dunst/dunstrc"
+
+# map sway config
+if [ ! -d "$HOME/.config/sway" ]; then
+    mkdir "$HOME/.config/sway"
+fi
+if [ -f "$HOME/.config/sway/config" ]; then
+    rm "$HOME/.config/sway/config"
+fi
+
+ln -s "$PWD/config/sway/config" "$HOME/.config/sway/config"
