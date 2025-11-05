@@ -1,9 +1,0 @@
-#!/bin/bash
-
-MAX_BRIGHTNESS=$(brightnessctl m)
-CURRENT_BRIGHTNESS=$(brightnessctl g)
-
-BRIGHTNESS_PERCENTAGE=$(echo "($CURRENT_BRIGHTNESS * 100 + $MAX_BRIGHTNESS / 2) / $MAX_BRIGHTNESS" | bc)
-
-echo " $BRIGHTNESS_PERCENTAGE"
-
