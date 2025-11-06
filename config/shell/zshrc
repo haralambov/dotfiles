@@ -2,6 +2,17 @@ export GOBIN="$HOME/go/bin"
 export PATH="$PATH:/snap/bin:/usr/local/go/bin:$GOBIN"
 export PAGER=""
 
+# ---- History config ----
+HISTFILE="$HOME/.zsh_history"  # where to save history
+HISTSIZE=100000                # how many commands to keep in memory
+SAVEHIST=100000                # how many commands to save to $HISTFILE
+
+setopt APPEND_HISTORY          # append rather than overwrite the history file
+setopt INC_APPEND_HISTORY      # write to history file as commands are entered
+setopt SHARE_HISTORY           # share history across all zsh sessions
+setopt HIST_IGNORE_ALL_DUPS    # don't record duplicates
+setopt HIST_REDUCE_BLANKS      # trim extra spaces
+
 ### CUSTOM CONFIGURATION
 
 export EDITOR=nvim
