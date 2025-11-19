@@ -1,5 +1,9 @@
 local lsp_zero = require('lsp-zero')
 
+if lsp_zero.extend_lspconfig then
+    lsp_zero.extend_lspconfig()
+end
+
 lsp_zero.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
@@ -27,26 +31,63 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {},
     handlers = {
-        lsp_zero.default_setup,
+        function(server_name)
+            if server_name == 'vue_ls' or server_name == 'vtsls' then
+                return
+            end
+            lsp_zero.default_setup(server_name)
+        end,
         lua_ls = function()
             local lua_opts = lsp_zero.nvim_lua_ls()
-            require('lspconfig').lua_ls.setup(lua_opts)
+            vim.lsp.config('lua_ls',lua_opts)
+            vim.lsp.enable('lua_ls')
         end,
-        volar = function()
-            require('lspconfig').volar.setup {
-                on_attach = lsp_zero.on_attach,
-                capabilities = lsp_zero.capabilities,
-                filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-                init_options = {
-                    vue = {
-                        hybridMode = false,
-                    },
-                },
-
-            }
-        end
-    }
+    },
 })
+
+local capabilities = lsp_zero.get_capabilities
+and lsp_zero.get_capabilities()
+or nil
+
+local vue_language_server_path =
+vim.fn.stdpath('data')
+.. '/mason/packages/vue-language-server/node_modules/@vue/language-server'
+
+local vue_plugin = {
+    name = '@vue/typescript-plugin',
+    location = vue_language_server_path,
+    languages = { 'vue' },
+    configNamespace = 'typescript',
+}
+
+vim.lsp.config('vtsls', {
+    on_attach = lsp_zero.on_attach,
+    capabilities = capabilities,
+    filetypes = {
+        'javascript',
+        'javascriptreact',
+        'javascript.jsx',
+        'typescript',
+        'typescriptreact',
+        'typescript.tsx',
+        'vue',
+    },
+    settings = {
+        vtsls = {
+            tsserver = {
+                globalPlugins = { vue_plugin },
+            },
+        },
+    },
+})
+vim.lsp.enable('vtsls')
+
+vim.lsp.config('vue_ls',{
+    on_attach = lsp_zero.on_attach,
+    capabilities = capabilities,
+    filetypes = { 'vue' },
+})
+vim.lsp.enable('vue_ls')
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
