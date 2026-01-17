@@ -6,15 +6,23 @@ return require('packer').startup(function(use)
     use { "catppuccin/nvim", as = "catppuccin" }
 
     use {
-        'nvim-telescope/telescope.nvim', branch = '0.1.x',
+        'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
     use {
         'nvim-treesitter/nvim-treesitter',
         run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
+            require('nvim-treesitter.install').update({ with_sync = true })()
+        end,
+        config = function()
+            require('nvim-treesitter.config').setup {
+                auto_install = true,
+                highlight = {
+                    enable = true,
+                    additional_vim_regex_highlighting = false,
+                },
+            }
         end,
     }
 
