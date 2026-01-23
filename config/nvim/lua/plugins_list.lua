@@ -5,6 +5,8 @@ return require('packer').startup(function(use)
 
     use { 'AlexvZyl/nordic.nvim' }
 
+    use { "David-Kunz/gen.nvim" }
+
     use {
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
