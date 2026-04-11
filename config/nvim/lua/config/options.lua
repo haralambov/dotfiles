@@ -1,7 +1,6 @@
 vim.g.mapleader = ' '
 
-vim.opt.path = vim.opt.path + '**'
-vim.opt.hidden = true
+vim.opt.path:append('**')
 vim.opt.wrap = false
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
@@ -12,7 +11,8 @@ vim.opt.undodir = os.getenv("HOME") .. "/.cache/undodir"
 vim.opt.undofile = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.updatetime = 50
+vim.opt.splitkeep = "screen"
+vim.opt.updatetime = 200
 vim.opt.scrolloff = 5
 vim.opt.list = true
 vim.opt.signcolumn = 'yes'
@@ -29,4 +29,7 @@ vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.colorcolumn = "80"
 vim.opt.showmode = false
-
+vim.opt.hlsearch = true
+vim.opt.smoothscroll = true
+vim.opt.termguicolors = true
+vim.opt.winborder = 'rounded'

@@ -5,11 +5,13 @@ if [ ! -d "$HOME/.config/nvim" ]; then
     mkdir "$HOME/.config/nvim"
 else
     rm "$HOME/.config/nvim/init.lua"
-    rm "$HOME/.config/nvim/lua"
+    rm -rf "$HOME/.config/nvim/lua"
+    rm -rf "$HOME/.config/nvim/lsp"
 fi
 
 ln -s "$PWD/config/nvim/init.lua" "$HOME/.config/nvim/init.lua"
 ln -s "$PWD/config/nvim/lua" "$HOME/.config/nvim/lua"
+ln -s "$PWD/config/nvim/lsp" "$HOME/.config/nvim/lsp"
 
 # map zshrc config
 if [ -f "$HOME/.zshrc" ]; then

@@ -1,5 +1,5 @@
 -- Double 'j' to switch to normal mode
-vim.keymap.set('i', 'jj', '<ESC>')
+vim.keymap.set('i', 'jj', '<Esc>', { noremap = true, silent = true })
 
 -- nvim-cmp seems to be overwriting the built-in
 -- word completion, so this remaps it before it's overwritten
@@ -12,7 +12,7 @@ vim.keymap.set('i', '<S-Tab>', '<C-d>')
 vim.keymap.set('n', '<leader>q', ':q<CR>')
 
 -- Leader + Q to close all buffers without saving
-vim.keymap.set('n', '<leader>Q', ':qa<CR>')
+vim.keymap.set('n', '<leader>Q', ':qa!<CR>')
 
 -- Better tabbing, reselect tabbed text
 vim.keymap.set('v', '>', '>gv')
@@ -41,8 +41,8 @@ vim.keymap.set('n', '<C-y>', '5<C-y>')
 vim.keymap.set('n', 'gp', '`[v`]')
 
 -- Easier splits: | splits right, - splits below
-vim.keymap.set('n', '<BAR>', ':vsp %<CR>')
-vim.keymap.set('n', '-', ':sp %<CR>')
+vim.keymap.set('n', '|', '<cmd>vsplit<CR>')
+vim.keymap.set('n', '-', '<cmd>split<CR>')
 
 -- Leader + s to save all files
 vim.keymap.set('n', '<leader>s', ':wa<CR>')
@@ -79,3 +79,6 @@ vim.keymap.set({ 'n', 'v' }, '<leader>g', ':Git<CR>')
 
 -- Copy everything between { and } including the brackets
 vim.keymap.set('n', 'YY', 'va{Vy')
+
+-- Clear search highlight
+vim.keymap.set('n', '<Esc>', ':noh<CR><Esc>')
