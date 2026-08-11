@@ -8,9 +8,6 @@ vim.pack.add({
     -- treesitter
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
 
-    -- harpoon
-    { src = 'https://github.com/ThePrimeagen/harpoon',           version = 'harpoon2' },
-
     -- git
     { src = 'https://github.com/tpope/vim-fugitive' },
     { src = 'https://github.com/lewis6991/gitsigns.nvim' },
@@ -25,6 +22,4 @@ vim.pack.add({
 
     -- quality of life
     { src = 'https://github.com/windwp/nvim-autopairs' },
-    { src = 'https://github.com/rmagatti/goto-preview' },
-    { src = 'https://github.com/akinsho/toggleterm.nvim' },
 })
