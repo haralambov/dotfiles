@@ -23,6 +23,10 @@ vim.pack.add({
     -- quality of life
     { src = 'https://github.com/windwp/nvim-autopairs' },
 
+    -- completion
+    { src = 'https://github.com/saghen/blink.lib' },
+    { src = 'https://github.com/saghen/blink.cmp' },
+
     -- AI plugin
     { src = "https://github.com/olimorris/codecompanion.nvim" },
 })
