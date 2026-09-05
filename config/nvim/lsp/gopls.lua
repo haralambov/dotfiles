@@ -24,6 +24,7 @@ return {
                 unusedwrite = true,
                 nilness = true,
                 shadow = true,
+                ST1000 = false,
             },
 
             staticcheck = true,
