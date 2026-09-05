@@ -26,7 +26,4 @@ vim.pack.add({
     -- completion
     { src = 'https://github.com/saghen/blink.lib' },
     { src = 'https://github.com/saghen/blink.cmp' },
-
-    -- AI plugin
-    { src = "https://github.com/olimorris/codecompanion.nvim" },
 })
